@@ -1,0 +1,45 @@
+{
+  "slug": "cv-recognition",
+  "title": "CV Recognition App",
+  "status": "mvp",
+  "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
+  "description": "A computer vision and NLP pipeline that automatically extracts structured data from CV documents — regardless of format or layout. Built to reduce manual screening effort and surface the most relevant candidates based on configurable criteria.",
+  "launchDate": "2024",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/cv-recognition/screen-1.png",
+      "caption": "Upload & parse interface"
+    },
+    {
+      "file": "assets/images/projects/cv-recognition/screen-2.png",
+      "caption": "Extracted candidate profile"
+    },
+    {
+      "file": "assets/images/projects/cv-recognition/screen-3.png",
+      "caption": "Matching & ranking view"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-eye", "label": "Computer Vision (OCR)" },
+    { "icon": "ti-brand-python", "label": "Python / spaCy" },
+    { "icon": "ti-file-text", "label": "Document Parsing" },
+    { "icon": "ti-filter", "label": "ML Ranking Engine" }
+  ],
+  "highlights": [
+    "Parses PDFs, Word docs, and scanned CVs",
+    "Extracts skills, experience, education automatically",
+    "Configurable matching criteria per job role",
+    "Handles multi-language CVs (EN, DE)"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Accuracy benchmarks and test datasets",
+      "Client recruitment workflow integrations",
+      "Model training details and fine-tuning approach"
+    ],
+    "label": "Benchmarks, integrations, and model details are available on request"
+  }
+}

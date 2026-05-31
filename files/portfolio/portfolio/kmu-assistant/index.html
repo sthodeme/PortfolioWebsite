@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <style>
+    /* Project detail specific */
+    .project-header {
+      padding: 2.5rem 0 2rem;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--col-text-faint);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--col-text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--col-text); }
+    .breadcrumb span { font-size: 11px; }
+
+    .project-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      margin: 0.75rem 0 0.75rem;
+    }
+    .project-tagline {
+      font-size: 1rem;
+      color: var(--col-text-muted);
+      max-width: 540px;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .project-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Screenshot grid */
+    .screenshots-section {
+      margin: 2.5rem 0;
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .screenshot-grid { grid-template-columns: 1fr; }
+    }
+    .screenshot-slot {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--col-border);
+      background: var(--col-surface);
+      aspect-ratio: 16/10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--col-text-faint);
+      overflow: hidden;
+      position: relative;
+    }
+    .screenshot-slot.main-shot { aspect-ratio: 16/9; }
+    .screenshot-slot img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      position: absolute; inset: 0;
+    }
+    .screenshot-slot .ss-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .screenshot-slot .ss-placeholder i { font-size: 28px; }
+    .screenshot-slot .ss-caption {
+      font-size: 11px;
+      color: var(--col-text-faint);
+    }
+
+    /* Info grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 480px) { .info-grid { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: var(--col-surface);
+      border: 1px solid var(--col-border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.25rem;
+    }
+    .info-card .info-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--col-text-faint);
+      margin-bottom: 10px;
+    }
+    .stack-list, .highlights-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .stack-list li, .highlights-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--col-text);
+    }
+    .stack-list li i { font-size: 16px; color: var(--col-text-muted); }
+    .highlights-list li i { font-size: 14px; color: var(--col-accent); }
+
+    /* Description */
+    .project-description {
+      font-size: 14.5px;
+      color: var(--col-text-muted);
+      line-height: 1.75;
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--col-surface);
+      border-left: 2px solid var(--col-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    /* Restricted */
+    .restricted-section { margin-top: 2rem; }
+    .restricted-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 0.75rem 0 1rem;
+    }
+    .restricted-items li {
+      font-size: 12.5px;
+      color: var(--col-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .restricted-items li i { font-size: 13px; color: var(--col-text-faint); }
+  </style>
+</head>
+<body>
+
+<nav id="site-nav"></nav>
+
+<main class="page-wrap">
+
+  <article class="project-header fade-up">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>›</span>
+      <a href="../index.html">Portfolio</a>
+      <span>›</span>
+      <span id="breadcrumb-title">Project</span>
+    </nav>
+
+    <div id="project-badge"></div>
+    <h1 id="project-title">Loading…</h1>
+    <p class="project-tagline" id="project-tagline"></p>
+
+    <div class="project-actions" id="project-actions">
+      <!-- filled by JS -->
+    </div>
+  </article>
+
+  <!-- Description -->
+  <div class="project-description fade-up delay-1" id="project-description"></div>
+
+  <!-- Screenshots -->
+  <section class="screenshots-section fade-up delay-2">
+    <div class="label">Screenshots</div>
+    <div class="screenshot-grid" id="screenshot-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- Info grid: stack + highlights -->
+  <div class="info-grid fade-up delay-3" id="info-grid">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- Restricted -->
+  <div class="restricted-section fade-up delay-4" id="restricted-section" style="display:none">
+    <div class="section-head"><span class="label">Restricted information</span></div>
+    <div class="restricted-block">
+      <div class="restricted-icon"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <div class="restricted-body">
+        <strong id="restricted-label"></strong>
+        <ul class="restricted-items" id="restricted-items"></ul>
+        <a id="restricted-li-btn" href="#" class="btn btn-li" target="_blank" rel="noopener" style="margin-top:4px">
+          <i class="ti ti-brand-linkedin" aria-hidden="true"></i> Contact on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="../../assets/js/loader.js"></script>
+<script>
+// Determine slug from current directory name
+const slug = (() => {
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  const idx = parts.indexOf('portfolio');
+  return idx !== -1 && parts[idx + 1] ? parts[idx + 1] : parts[parts.length - 2];
+})();
+
+(async () => {
+  const { loadOwner, loadProject, buildNav, buildFooter, statusBadge } = window.SiteLoader;
+  const [owner, project] = await Promise.all([loadOwner(), loadProject(slug)]);
+
+  buildNav(owner, 'portfolio');
+  buildFooter(owner);
+
+  // Head
+  document.title = `${project.title} — ${owner.name}`;
+  document.getElementById('breadcrumb-title').textContent = project.title;
+  document.getElementById('project-badge').innerHTML = statusBadge(project.status);
+  document.getElementById('project-title').textContent = project.title;
+  document.getElementById('project-tagline').textContent = project.tagline;
+  document.getElementById('project-description').textContent = project.description;
+
+  // Actions
+  const actions = [];
+  if (project.liveUrl) {
+    actions.push(`<a href="${project.liveUrl}" class="btn btn-primary" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Live project</a>`);
+  }
+  if (project.githubUrl) {
+    actions.push(`<a href="${project.githubUrl}" class="btn btn-ghost" target="_blank" rel="noopener"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>`);
+  }
+  actions.push(`<a href="${owner.socials.linkedin}" class="btn btn-ghost" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> Connect</a>`);
+  document.getElementById('project-actions').innerHTML = actions.join('');
+
+  // Screenshots
+  const screenshotGrid = document.getElementById('screenshot-grid');
+  if (project.screenshots && project.screenshots.length > 0) {
+    screenshotGrid.innerHTML = project.screenshots.map((s, i) => {
+      const isMain = i === 0;
+      return `
+        <div class="screenshot-slot ${isMain ? 'main-shot' : ''}">
+          <div class="ss-placeholder">
+            <i class="ti ti-photo" aria-hidden="true"></i>
+            <span class="ss-caption">${s.caption}</span>
+          </div>
+        </div>
+      `;
+      /* When real images are added, replace ss-placeholder with:
+         <img src="../../${s.file}" alt="${s.caption}" loading="lazy" />
+      */
+    }).join('');
+  } else {
+    screenshotGrid.innerHTML = `<div class="screenshot-slot main-shot"><div class="ss-placeholder"><i class="ti ti-photo-off" aria-hidden="true"></i><span class="ss-caption">No screenshots yet</span></div></div>`;
+  }
+
+  // Info cards
+  const stackHTML = project.stack && project.stack.length
+    ? `<ul class="stack-list">${project.stack.map(s => `<li><i class="ti ${s.icon}" aria-hidden="true"></i>${s.label}</li>`).join('')}</ul>`
+    : '<p style="font-size:13px;color:var(--col-text-muted)">To be added</p>';
+
+  const highlightsHTML = project.highlights && project.highlights.length
+    ? `<ul class="highlights-list">${project.highlights.map(h => `<li><i class="ti ti-check" aria-hidden="true"></i>${h}</li>`).join('')}</ul>`
+    : '';
+
+  document.getElementById('info-grid').innerHTML = `
+    <div class="info-card">
+      <div class="info-label">Tech stack</div>
+      ${stackHTML}
+    </div>
+    <div class="info-card">
+      <div class="info-label">Key highlights</div>
+      ${highlightsHTML}
+    </div>
+  `;
+
+  // Restricted
+  if (project.restricted && project.restricted.enabled) {
+    const sec = document.getElementById('restricted-section');
+    sec.style.display = 'block';
+    document.getElementById('restricted-label').textContent = project.restricted.label;
+    document.getElementById('restricted-items').innerHTML = project.restricted.items
+      .map(item => `<li><i class="ti ti-minus" aria-hidden="true"></i>${item}</li>`)
+      .join('');
+    document.getElementById('restricted-li-btn').href = owner.socials.linkedin;
+  }
+})();
+</script>
+</body>
+</html>

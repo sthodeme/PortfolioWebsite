@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sree Ram Gopal Reddy — AI Product Developer</title>
+  <meta name="description" content="AI Product Developer and Individual Contributor. Building intelligent products across AI, NLP, and computer vision." />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* Landing-specific styles */
+    .hero-section {
+      padding: 4rem 0 3rem;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--col-accent);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.85); }
+    }
+    .hero-section h1 {
+      margin-bottom: 1rem;
+    }
+    .hero-section h1 em {
+      font-style: italic;
+      color: var(--col-accent);
+    }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--col-text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Passport strip */
+    .passport-strip {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--col-surface);
+      border: 1px solid var(--col-border);
+      border-radius: var(--radius-lg);
+    }
+    .passport-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--col-text-muted);
+      padding: 4px 10px;
+      border-right: 1px solid var(--col-border);
+    }
+    .passport-item:last-child { border-right: none; }
+    .passport-item i { font-size: 15px; }
+
+    /* Milestones */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--col-border);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 7px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--col-surface);
+      border: 1.5px solid var(--col-border-strong);
+    }
+    .timeline-item:first-child::before {
+      background: var(--col-accent);
+      border-color: var(--col-accent);
+    }
+    .timeline-year {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--col-text-faint);
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--col-text);
+      margin-bottom: 3px;
+    }
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--col-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Patent highlight */
+    .patent-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: var(--col-accent-light);
+      color: var(--col-accent);
+      border-radius: 20px;
+      margin-top: 6px;
+    }
+
+    /* Portfolio CTA */
+    .portfolio-cta {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--col-text);
+      border-radius: var(--radius-xl);
+      color: var(--col-bg);
+    }
+    .portfolio-cta .cta-left h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--col-bg);
+      margin-bottom: 4px;
+    }
+    .portfolio-cta .cta-left p {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+    .btn-cta-light {
+      background: var(--col-bg);
+      color: var(--col-text);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 18px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .btn-cta-light:hover { opacity: 0.88; }
+
+    @media (max-width: 520px) {
+      .passport-strip { flex-direction: column; gap: 4px; }
+      .passport-item { border-right: none; border-bottom: 1px solid var(--col-border); padding: 6px 0; }
+      .passport-item:last-child { border-bottom: none; }
+      .portfolio-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="site-nav"></nav>
+
+<main class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-eyebrow fade-up">
+      <span class="hero-dot"></span>
+      <span class="label">AI Product Developer · IC</span>
+    </div>
+    <h1 class="fade-up delay-1">
+      Building products<br>that actually <em>think.</em>
+    </h1>
+    <p class="hero-tagline fade-up delay-2" id="hero-tagline">
+      <!-- filled by JS -->
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a href="portfolio/index.html" class="btn btn-primary">
+        <i class="ti ti-layout-grid" aria-hidden="true"></i> View portfolio
+      </a>
+      <a id="hero-li-btn" href="#" class="btn btn-ghost" target="_blank" rel="noopener">
+        <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+      </a>
+      <a id="hero-gh-btn" href="#" class="btn btn-ghost" target="_blank" rel="noopener">
+        <i class="ti ti-brand-github" aria-hidden="true"></i> GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- PASSPORT STRIP -->
+  <div class="passport-strip fade-up delay-4" id="passport-strip">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- MILESTONES -->
+  <div class="section-head fade-up">
+    <span class="label">Professional journey</span>
+  </div>
+
+  <div class="timeline" id="timeline">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- PORTFOLIO CTA -->
+  <div class="portfolio-cta fade-up delay-5" id="portfolio-cta">
+    <div class="cta-left">
+      <h3>See the work.</h3>
+      <p id="cta-sub">MVP and production-ready AI products</p>
+    </div>
+    <a href="portfolio/index.html" class="btn-cta-light">
+      Open portfolio <i class="ti ti-arrow-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/js/loader.js"></script>
+<script>
+(async () => {
+  const { loadOwner, loadProjects, buildNav, buildFooter } = window.SiteLoader;
+  const [owner, projects] = await Promise.all([loadOwner(), loadProjects()]);
+
+  buildNav(owner, 'home');
+  buildFooter(owner);
+
+  // Hero
+  document.getElementById('hero-tagline').textContent = owner.tagline;
+  document.getElementById('hero-li-btn').href = owner.socials.linkedin;
+  document.getElementById('hero-gh-btn').href = owner.socials.github;
+
+  // Passport strip
+  const passportData = [
+    { icon: 'ti-map-pin', text: owner.location },
+    { icon: 'ti-certificate', text: 'Design Patent Holder' },
+    { icon: 'ti-world', text: 'IN · MY · JP · DE' },
+    { icon: 'ti-brain', text: 'AI Product Builder' },
+    { icon: 'ti-code', text: `${projects.length} Projects` }
+  ];
+  document.getElementById('passport-strip').innerHTML = passportData
+    .map(p => `<span class="passport-item"><i class="ti ${p.icon}" aria-hidden="true"></i>${p.text}</span>`)
+    .join('');
+
+  // Timeline
+  document.getElementById('timeline').innerHTML = owner.milestones.map((m, i) => `
+    <div class="timeline-item fade-up" style="animation-delay:${0.1 + i * 0.08}s">
+      <div class="timeline-year">${m.year}</div>
+      <div class="timeline-title">${m.title}</div>
+      <div class="timeline-desc">${m.description}</div>
+      ${m.title.toLowerCase().includes('patent') ? '<span class="patent-badge"><i class="ti ti-certificate" aria-hidden="true"></i> International design patent</span>' : ''}
+    </div>
+  `).join('');
+
+  // CTA sub
+  const mvpCount = projects.filter(p => p.status === 'mvp').length;
+  const prodCount = projects.filter(p => p.status === 'production').length;
+  let ctaSub = `${projects.length} project${projects.length !== 1 ? 's' : ''}`;
+  if (mvpCount) ctaSub += ` · ${mvpCount} MVP`;
+  if (prodCount) ctaSub += ` · ${prodCount} Production`;
+  document.getElementById('cta-sub').textContent = ctaSub;
+
+  document.title = `${owner.name} — AI Product Developer`;
+})();
+</script>
+</body>
+</html>

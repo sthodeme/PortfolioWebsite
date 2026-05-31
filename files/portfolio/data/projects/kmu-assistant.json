@@ -1,0 +1,46 @@
+{
+  "slug": "kmu-assistant",
+  "title": "KMU Assistant",
+  "status": "mvp",
+  "tagline": "AI-powered assistant tailored for small and medium enterprises (KMU).",
+  "description": "KMU Assistant is an intelligent conversational product designed to help small and medium-sized businesses automate routine queries, surface business insights, and reduce operational overhead. Built with a focus on practical deployment in real enterprise environments.",
+  "launchDate": "2024",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/kmu-assistant/screen-1.png",
+      "caption": "Main dashboard"
+    },
+    {
+      "file": "assets/images/projects/kmu-assistant/screen-2.png",
+      "caption": "Conversation interface"
+    },
+    {
+      "file": "assets/images/projects/kmu-assistant/screen-3.png",
+      "caption": "Analytics view"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-brain", "label": "LLM / AI Core" },
+    { "icon": "ti-brand-python", "label": "Python / FastAPI" },
+    { "icon": "ti-database", "label": "Vector Database" },
+    { "icon": "ti-message-chatbot", "label": "Conversational UI" }
+  ],
+  "highlights": [
+    "Designed for KMU (German SME) context and workflows",
+    "RAG-based retrieval for domain-specific knowledge",
+    "Multi-turn conversation with memory",
+    "Deployable on-premise or cloud"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Business metrics and usage data",
+      "Client deployment details",
+      "Internal architecture diagrams",
+      "Proprietary prompt engineering"
+    ],
+    "label": "Architecture, metrics, and client details are available on request"
+  }
+}

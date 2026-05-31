@@ -1,0 +1,45 @@
+{
+  "name": "Sree Ram Gopal Reddy",
+  "initials": "SR",
+  "role": "AI Product Developer · Individual Contributor",
+  "tagline": "Building intelligent products at the intersection of AI and real-world impact.",
+  "location": "Germany",
+  "domain": "xyz.com",
+  "email": "",
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/srgreddy/",
+    "github": "https://github.com/sthodeme"
+  },
+  "milestones": [
+    {
+      "year": "2024",
+      "title": "AI Product Developer · Individual Contributor",
+      "description": "Designing and shipping AI-powered products end-to-end — from concept to MVP to production."
+    },
+    {
+      "year": "2020s",
+      "title": "International Design Patent Holder",
+      "description": "Approved international design patent, with a second application currently in process."
+    },
+    {
+      "year": "2010s",
+      "title": "Product Owner & Product Developer",
+      "description": "Led cross-functional, cross-cultural teams across India, Malaysia, Japan, and Germany."
+    },
+    {
+      "year": "2000s",
+      "title": "Project Leader & Designer",
+      "description": "Delivered engineering projects spanning design, development, and team leadership across international markets."
+    },
+    {
+      "year": "1998",
+      "title": "Masters in Engineering · India",
+      "description": "Graduate engineering degree laying the foundation for a career across product, design, and technology."
+    }
+  ],
+  "restricted": {
+    "label": "Some details are available on request",
+    "cta": "Contact on LinkedIn",
+    "url": "https://www.linkedin.com/in/srgreddy/"
+  }
+}

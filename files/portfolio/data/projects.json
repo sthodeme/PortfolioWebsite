@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "kmu-assistant",
+    "title": "KMU Assistant",
+    "status": "mvp",
+    "tagline": "AI-powered assistant tailored for small and medium enterprises (KMU).",
+    "tags": ["AI", "NLP", "Python", "LLM"],
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "cv-recognition",
+    "title": "CV Recognition App",
+    "status": "mvp",
+    "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
+    "tags": ["Computer Vision", "NLP", "Python", "ML"],
+    "featured": true,
+    "order": 2
+  }
+]
