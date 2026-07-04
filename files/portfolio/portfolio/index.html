@@ -180,15 +180,17 @@
 
 <footer id="site-footer"></footer>
 
-<script src="../assets/js/loader.js"></script>
+<script src="../assets/js/loader.js?v=3"></script>
 <script>
 const ICONS = {
   'kmu-assistant': 'ti-message-chatbot',
+  'kmu-assistant-flowise': 'ti-topology-star',
   'cv-recognition': 'ti-id-badge',
   default: 'ti-code'
 };
 
 (async () => {
+  try {
   const { loadOwner, loadProjects, buildNav, buildFooter, statusBadge, tagList, ROOT } = window.SiteLoader;
   const [owner, projects] = await Promise.all([loadOwner(), loadProjects()]);
 
@@ -244,6 +246,11 @@ const ICONS = {
     `${projects.length} project${projects.length !== 1 ? 's' : ''} — ${projects.filter(p=>p.status==='mvp').length} MVP, ${projects.filter(p=>p.status==='production').length} Production`;
 
   document.title = `Portfolio — ${owner.name}`;
+  } catch (err) {
+    console.error(err);
+    document.getElementById('projects-grid').innerHTML =
+      `<div class="empty-state">Failed to load projects: ${err.message}. Try a hard refresh (Cmd+Shift+R).</div>`;
+  }
 })();
 </script>
 </body>

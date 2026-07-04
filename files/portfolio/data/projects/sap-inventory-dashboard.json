@@ -1,0 +1,50 @@
+{
+  "slug": "sap-inventory-dashboard",
+  "title": "SAP Inventory Dashboard Suite",
+  "status": "mvp",
+  "tagline": "Streamlit web app that consolidates 7 SAP export files and generates interactive inventory analysis dashboards.",
+  "description": "A two-stage data processing and visualisation tool built with Streamlit. Stage 1 consolidates 7 different SAP CSV export files (Material Master, Vendor Master, Plant Master, Purchasing Info Records, Stock Movements, Purchase Orders, Stock Balance) into a single unified dataset. Stage 2 runs advanced inventory analysis — Top-N material and vendor rankings, cumulative monthly trend tracking, and tied-up capital calculations — and outputs interactive Plotly dashboards plus standalone HTML and Excel reports. Deployable locally or via Docker.",
+  "launchDate": "2024",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/sap-inventory-dashboard/image1.jpg",
+      "caption": "Dashboard overview"
+    },
+    {
+      "file": "assets/images/projects/sap-inventory-dashboard/image2.jpg",
+      "caption": "Inventory trend charts"
+    },
+    {
+      "file": "assets/images/projects/sap-inventory-dashboard/image3.jpg",
+      "caption": "Vendor analysis view"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-brand-python", "label": "Python 3.11+" },
+    { "icon": "ti-layout-dashboard", "label": "Streamlit 1.28 (web UI)" },
+    { "icon": "ti-table", "label": "Pandas 2.0 (data processing)" },
+    { "icon": "ti-chart-line", "label": "Plotly 5.17 (interactive charts)" },
+    { "icon": "ti-file-spreadsheet", "label": "OpenPyXL (Excel export)" },
+    { "icon": "ti-brand-docker", "label": "Docker / Docker Compose" }
+  ],
+  "highlights": [
+    "Consolidates 7 SAP CSV exports into one unified dataset",
+    "Automatic movement type classification (incoming / outgoing / transfers)",
+    "Top-N material and vendor analysis with configurable N value",
+    "Cumulative monthly trend charts per material",
+    "Tied-up capital calculation over time",
+    "Exports standalone HTML dashboard + Excel report",
+    "Runs locally or via Docker on port 8501"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Sample SAP CSV datasets used for development and testing",
+      "Client-specific inventory configurations",
+      "Source code and Docker Compose setup"
+    ],
+    "label": "Source code, sample data, and configuration details are available on request"
+  }
+}

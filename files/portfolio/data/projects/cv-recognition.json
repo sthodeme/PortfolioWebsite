@@ -2,44 +2,45 @@
   "slug": "cv-recognition",
   "title": "CV Recognition App",
   "status": "mvp",
-  "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
-  "description": "A computer vision and NLP pipeline that automatically extracts structured data from CV documents — regardless of format or layout. Built to reduce manual screening effort and surface the most relevant candidates based on configurable criteria.",
+  "tagline": "Mobile-friendly object detection — run YOLO models on uploads or live camera from the browser.",
+  "description": "CV Recognition App is a full-stack computer vision product for running pretrained YOLO `.pt` models in the browser. Users pick a model, run inference on uploaded images or a live camera feed, and download annotated results. A FastAPI backend serves model metadata and inference; a Vite + React client handles the mobile-first UX with a local dev proxy to the API.",
   "launchDate": "2024",
   "liveUrl": "",
-  "githubUrl": "",
+  "githubUrl": "https://github.com/sthodeme/CV_App",
   "screenshots": [
     {
-      "file": "assets/images/projects/cv-recognition/screen-1.png",
-      "caption": "Upload & parse interface"
+      "file": "assets/images/projects/cv-recognition/image1.jpg",
+      "caption": "Model selection & upload"
     },
     {
-      "file": "assets/images/projects/cv-recognition/screen-2.png",
-      "caption": "Extracted candidate profile"
+      "file": "assets/images/projects/cv-recognition/image2.jpg",
+      "caption": "Live camera inference"
     },
     {
-      "file": "assets/images/projects/cv-recognition/screen-3.png",
-      "caption": "Matching & ranking view"
+      "file": "assets/images/projects/cv-recognition/image3.jpg",
+      "caption": "Annotated detection results"
     }
   ],
   "stack": [
-    { "icon": "ti-eye", "label": "Computer Vision (OCR)" },
-    { "icon": "ti-brand-python", "label": "Python / spaCy" },
-    { "icon": "ti-file-text", "label": "Document Parsing" },
-    { "icon": "ti-filter", "label": "ML Ranking Engine" }
+    { "icon": "ti-eye", "label": "YOLO / Ultralytics" },
+    { "icon": "ti-brand-python", "label": "Python / FastAPI" },
+    { "icon": "ti-brand-react", "label": "React / TypeScript / Vite" },
+    { "icon": "ti-camera", "label": "Upload & live camera" }
   ],
   "highlights": [
-    "Parses PDFs, Word docs, and scanned CVs",
-    "Extracts skills, experience, education automatically",
-    "Configurable matching criteria per job role",
-    "Handles multi-language CVs (EN, DE)"
+    "Metadata-driven model catalog — swap pretrained YOLO weights via `models.json`",
+    "Still-image upload and live camera inference with downloadable annotated output",
+    "FastAPI backend for model metadata and inference; Vite dev proxy for local workflow",
+    "Docker, nginx, and GitHub Actions paths for production deploy and CI"
   ],
   "restricted": {
     "enabled": true,
     "items": [
-      "Accuracy benchmarks and test datasets",
-      "Client recruitment workflow integrations",
-      "Model training details and fine-tuning approach"
+      "Private model weights and custom training datasets",
+      "Production deployment URLs and client use cases",
+      "Inference latency benchmarks and accuracy metrics",
+      "Internal API keys, environment configs, and security scan results"
     ],
-    "label": "Benchmarks, integrations, and model details are available on request"
+    "label": "Deployments, benchmarks, custom models, and production configs are available on request"
   }
 }

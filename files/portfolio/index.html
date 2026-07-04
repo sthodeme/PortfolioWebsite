@@ -7,10 +7,147 @@
   <meta name="description" content="AI Product Developer and Individual Contributor. Building intelligent products across AI, NLP, and computer vision." />
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Landing-specific styles */
-    .hero-section {
-      padding: 4rem 0 3rem;
+    .hero-section { padding: 4rem 0 2.5rem; }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    .nav-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--col-accent-light);
+      border: 1.5px solid var(--col-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--col-accent);
+      font-size: 18px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .nav-avatar:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 0 4px rgba(45,90,61,0.15);
+    }
+    .nav-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Nav name sizing and Thodeme style */
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--col-text);
+    }
+    .logo-thodeme {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--col-accent);
+      font-size: 1.15em;
+    }
+
+    /* Popup overlay */
+    .profile-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-popup.open {
+      display: flex;
+    }
+    .profile-popup-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,22,18,0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .profile-popup-card {
+      position: relative;
+      z-index: 1;
+      background: var(--col-surface);
+      border: 1px solid var(--col-border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem 2rem;
+      width: 320px;
+      max-width: 90vw;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+      animation: popIn 0.22s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .popup-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--col-border);
+      background: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      color: var(--col-text-muted);
+      transition: background 0.15s;
+    }
+    .popup-close:hover { background: var(--col-bg); }
+    .popup-avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: var(--col-accent-light);
+      border: 2.5px solid var(--col-accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px;
+      color: var(--col-accent);
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 0 0 6px rgba(45,90,61,0.08);
+    }
+    .popup-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .popup-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+    .popup-role {
+      font-size: 12.5px;
+      color: var(--col-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .popup-location {
+      font-size: 12px;
+      color: var(--col-text-faint);
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .popup-links {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
     .hero-eyebrow {
       display: flex;
       align-items: center;
@@ -27,72 +164,59 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50%       { opacity: 0.5; transform: scale(0.85); }
     }
-    .hero-section h1 {
-      margin-bottom: 1rem;
-    }
-    .hero-section h1 em {
-      font-style: italic;
-      color: var(--col-accent);
-    }
-    .hero-tagline {
-      font-size: 1.05rem;
+    /* Eyebrow label — bolder & darker than .label */
+    .hero-eyebrow .eyebrow-text {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--col-text-muted);
-      max-width: 520px;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--col-text-muted);
       line-height: 1.7;
       margin-bottom: 2rem;
     }
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* Passport strip */
-    .passport-strip {
+    /* Inline fact strip — no box, just pills in a row */
+    .fact-strip {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
-      margin: 2.5rem 0;
-      padding: 1.25rem 1.5rem;
+      margin: 2rem 0 0.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--col-border);
+    }
+    .fact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--col-text-muted);
+      padding: 5px 12px;
       background: var(--col-surface);
       border: 1px solid var(--col-border);
-      border-radius: var(--radius-lg);
+      border-radius: 20px;
     }
-    .passport-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
-      color: var(--col-text-muted);
-      padding: 4px 10px;
-      border-right: 1px solid var(--col-border);
-    }
-    .passport-item:last-child { border-right: none; }
-    .passport-item i { font-size: 15px; }
+    .fact-pill i { font-size: 14px; color: var(--col-text-faint); }
 
     /* Milestones */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-    }
+    .timeline { position: relative; padding-left: 24px; }
     .timeline::before {
       content: '';
       position: absolute;
-      left: 5px;
-      top: 8px;
-      bottom: 8px;
+      left: 5px; top: 8px; bottom: 8px;
       width: 1px;
       background: var(--col-border);
     }
-    .timeline-item {
-      position: relative;
-      padding-bottom: 2rem;
-    }
+    .timeline-item { position: relative; padding-bottom: 2rem; }
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -20px;
-      top: 7px;
+      left: -20px; top: 7px;
       width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--col-surface);
@@ -103,30 +227,28 @@
       border-color: var(--col-accent);
     }
     .timeline-year {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
       color: var(--col-text-faint);
       letter-spacing: 0.06em;
       margin-bottom: 3px;
     }
     .timeline-title {
-      font-size: 14px;
+      font-size: 15px;         /* larger than before */
       font-weight: 500;
       color: var(--col-text);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     .timeline-desc {
-      font-size: 13px;
+      font-size: 14px;         /* larger & darker */
       color: var(--col-text-muted);
       line-height: 1.6;
     }
-
-    /* Patent highlight */
     .patent-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 500;
       padding: 4px 10px;
       background: var(--col-accent-light);
@@ -142,28 +264,28 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1.5rem;
+      padding: 1.5rem 1.75rem;
       background: var(--col-text);
       border-radius: var(--radius-xl);
       color: var(--col-bg);
     }
-    .portfolio-cta .cta-left h3 {
+    .portfolio-cta h3 {
       font-family: var(--font-display);
       font-size: 1.3rem;
       font-weight: 400;
       color: var(--col-bg);
       margin-bottom: 4px;
     }
-    .portfolio-cta .cta-left p {
-      font-size: 13px;
+    .portfolio-cta p {
+      font-size: 14px;
       opacity: 0.6;
     }
     .btn-cta-light {
       background: var(--col-bg);
       color: var(--col-text);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
-      padding: 9px 18px;
+      padding: 10px 20px;
       border-radius: var(--radius-md);
       text-decoration: none;
       display: inline-flex;
@@ -175,9 +297,6 @@
     .btn-cta-light:hover { opacity: 0.88; }
 
     @media (max-width: 520px) {
-      .passport-strip { flex-direction: column; gap: 4px; }
-      .passport-item { border-right: none; border-bottom: 1px solid var(--col-border); padding: 6px 0; }
-      .passport-item:last-child { border-bottom: none; }
       .portfolio-cta { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -188,48 +307,34 @@
 
 <main class="page-wrap">
 
-  <!-- HERO -->
   <section class="hero-section">
     <div class="hero-eyebrow fade-up">
       <span class="hero-dot"></span>
-      <span class="label">AI Product Developer · IC</span>
+      <span class="eyebrow-text">AI Product Developer · Individual Contributor</span>
     </div>
-    <h1 class="fade-up delay-1">
-      Building products<br>that actually <em>think.</em>
-    </h1>
-    <p class="hero-tagline fade-up delay-2" id="hero-tagline">
-      <!-- filled by JS -->
-    </p>
-    <div class="hero-actions fade-up delay-3">
+    <p class="hero-tagline fade-up delay-1" id="hero-tagline"></p>
+    <div class="hero-actions fade-up delay-2">
       <a href="portfolio/index.html" class="btn btn-primary">
         <i class="ti ti-layout-grid" aria-hidden="true"></i> View portfolio
       </a>
       <a id="hero-li-btn" href="#" class="btn btn-ghost" target="_blank" rel="noopener">
         <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
       </a>
-      <a id="hero-gh-btn" href="#" class="btn btn-ghost" target="_blank" rel="noopener">
-        <i class="ti ti-brand-github" aria-hidden="true"></i> GitHub
-      </a>
     </div>
   </section>
 
-  <!-- PASSPORT STRIP -->
-  <div class="passport-strip fade-up delay-4" id="passport-strip">
-    <!-- filled by JS -->
-  </div>
+  <!-- Inline fact pills — no box -->
+  <div class="fact-strip fade-up delay-3" id="fact-strip"></div>
 
-  <!-- MILESTONES -->
+  <!-- Milestones -->
   <div class="section-head fade-up">
     <span class="label">Professional journey</span>
   </div>
+  <div class="timeline" id="timeline"></div>
 
-  <div class="timeline" id="timeline">
-    <!-- filled by JS -->
-  </div>
-
-  <!-- PORTFOLIO CTA -->
-  <div class="portfolio-cta fade-up delay-5" id="portfolio-cta">
-    <div class="cta-left">
+  <!-- CTA -->
+  <div class="portfolio-cta fade-up delay-4" id="portfolio-cta">
+    <div>
       <h3>See the work.</h3>
       <p id="cta-sub">MVP and production-ready AI products</p>
     </div>
@@ -242,30 +347,77 @@
 
 <footer id="site-footer"></footer>
 
+<div id="profile-popup" class="profile-popup" role="dialog"
+     aria-modal="true" aria-label="Profile card">
+  <div class="profile-popup-backdrop" id="popup-backdrop"></div>
+  <div class="profile-popup-card">
+    <button class="popup-close" id="popup-close" aria-label="Close">
+      <i class="ti ti-x"></i>
+    </button>
+    <div class="popup-avatar">
+      <img src="assets/images/photo.jpg" alt="Sree Ram Gopal Reddy Thodeme" />
+    </div>
+    <h2 class="popup-name">
+      Sree Ram Gopal Reddy <span class="logo-thodeme">Thodeme</span>
+    </h2>
+    <p class="popup-role">AI Product Developer · Individual Contributor</p>
+    <p class="popup-location">
+      <i class="ti ti-map-pin"></i> Germany
+    </p>
+    <div class="popup-links">
+      <a href="https://www.linkedin.com/in/srgreddy/" target="_blank"
+         rel="noopener" class="btn btn-li">
+        <i class="ti ti-brand-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/sthodeme" target="_blank"
+         rel="noopener" class="btn btn-ghost">
+        <i class="ti ti-brand-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="assets/js/loader.js"></script>
 <script>
 (async () => {
-  const { loadOwner, loadProjects, buildNav, buildFooter } = window.SiteLoader;
+  const { loadOwner, loadProjects, buildFooter, ROOT } = window.SiteLoader;
   const [owner, projects] = await Promise.all([loadOwner(), loadProjects()]);
 
-  buildNav(owner, 'home');
+  const nav = document.getElementById('site-nav');
+  nav.innerHTML = `
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-avatar" id="avatar-trigger" role="button"
+          aria-label="View profile photo" title="View profile">
+          <img src="assets/images/photo.jpg" alt="Sree Ram Gopal Reddy Thodeme" width="34" height="34" />
+        </div>
+        <a class="nav-logo" href="${ROOT}index.html">
+          Sree Ram Gopal Reddy <span class="logo-thodeme">Thodeme</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="${ROOT}index.html" class="active">Home</a></li>
+        <li><a href="${ROOT}portfolio/index.html">Portfolio</a></li>
+        <li><a href="${owner.socials.linkedin}" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      </ul>
+    </div>
+  `;
+
   buildFooter(owner);
 
-  // Hero
   document.getElementById('hero-tagline').textContent = owner.tagline;
   document.getElementById('hero-li-btn').href = owner.socials.linkedin;
-  document.getElementById('hero-gh-btn').href = owner.socials.github;
 
-  // Passport strip
-  const passportData = [
+  // Fact pills (no box, no GitHub)
+  const facts = [
     { icon: 'ti-map-pin', text: owner.location },
-    { icon: 'ti-certificate', text: 'Design Patent Holder' },
+    { icon: 'ti-certificate', text: 'International Design Patent' },
     { icon: 'ti-world', text: 'IN · MY · JP · DE' },
     { icon: 'ti-brain', text: 'AI Product Builder' },
     { icon: 'ti-code', text: `${projects.length} Projects` }
   ];
-  document.getElementById('passport-strip').innerHTML = passportData
-    .map(p => `<span class="passport-item"><i class="ti ${p.icon}" aria-hidden="true"></i>${p.text}</span>`)
+  document.getElementById('fact-strip').innerHTML = facts
+    .map(f => `<span class="fact-pill"><i class="ti ${f.icon}" aria-hidden="true"></i>${f.text}</span>`)
     .join('');
 
   // Timeline
@@ -274,19 +426,32 @@
       <div class="timeline-year">${m.year}</div>
       <div class="timeline-title">${m.title}</div>
       <div class="timeline-desc">${m.description}</div>
-      ${m.title.toLowerCase().includes('patent') ? '<span class="patent-badge"><i class="ti ti-certificate" aria-hidden="true"></i> International design patent</span>' : ''}
+      ${m.title.toLowerCase().includes('patent') ? '<span class="patent-badge"><i class="ti ti-certificate" aria-hidden="true"></i> 1 approved · 1 pending</span>' : ''}
     </div>
   `).join('');
 
-  // CTA sub
-  const mvpCount = projects.filter(p => p.status === 'mvp').length;
-  const prodCount = projects.filter(p => p.status === 'production').length;
-  let ctaSub = `${projects.length} project${projects.length !== 1 ? 's' : ''}`;
-  if (mvpCount) ctaSub += ` · ${mvpCount} MVP`;
-  if (prodCount) ctaSub += ` · ${prodCount} Production`;
-  document.getElementById('cta-sub').textContent = ctaSub;
+  // CTA count
+  const mvp = projects.filter(p => p.status === 'mvp').length;
+  const prod = projects.filter(p => p.status === 'production').length;
+  let sub = `${projects.length} project${projects.length !== 1 ? 's' : ''}`;
+  if (mvp) sub += ` · ${mvp} MVP`;
+  if (prod) sub += ` · ${prod} Production`;
+  document.getElementById('cta-sub').textContent = sub;
 
   document.title = `${owner.name} — AI Product Developer`;
+
+  const trigger  = document.getElementById('avatar-trigger');
+  const popup    = document.getElementById('profile-popup');
+  const backdrop = document.getElementById('popup-backdrop');
+  const closeBtn = document.getElementById('popup-close');
+
+  function openPopup()  { popup.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closePopup() { popup.classList.remove('open'); document.body.style.overflow = ''; }
+
+  trigger.addEventListener('click', openPopup);
+  closeBtn.addEventListener('click', closePopup);
+  backdrop.addEventListener('click', closePopup);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
 })();
 </script>
 </body>

@@ -1,0 +1,50 @@
+{
+  "slug": "kmu-assistant-flowise",
+  "title": "KMU Assistant (Flowise)",
+  "status": "mvp",
+  "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
+  "description": "This is a rebuilt version of the original KMU Assistant, now implemented entirely using Flowise — a no-code/low-code LLM orchestration tool. The project was developed as a Week 6 MVP and serves as a plug-and-play RAG chatbot for KMU legal queries. It uses a full retrieval-augmented generation pipeline: PDF documents are ingested, split into chunks, embedded via OpenAI, stored in a Qdrant vector database, and answered by Anthropic Claude. The entire stack runs on Docker via Dokploy and is hosted at thodeme.de.",
+  "launchDate": "June 2026",
+  "liveUrl": "https://thodeme.de",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/kmu-assistant-flowise/image1.jpg",
+      "caption": "Flowise pipeline canvas"
+    },
+    {
+      "file": "assets/images/projects/kmu-assistant-flowise/image2.jpg",
+      "caption": "RAG chatbot interface"
+    },
+    {
+      "file": "assets/images/projects/kmu-assistant-flowise/image3.jpg",
+      "caption": "Qdrant vector store"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-topology-star", "label": "Flowise (no-code LLM orchestration)" },
+    { "icon": "ti-database", "label": "Qdrant (vector database)" },
+    { "icon": "ti-brand-openai", "label": "OpenAI Embeddings (text-embedding-3-small)" },
+    { "icon": "ti-brain", "label": "Anthropic Claude (answer generation)" },
+    { "icon": "ti-file-type-pdf", "label": "PDF File Loader + Recursive Character Splitter" },
+    { "icon": "ti-brand-docker", "label": "Docker / Dokploy (self-hosted)" }
+  ],
+  "highlights": [
+    "Full RAG pipeline: ingest → embed → retrieve → answer",
+    "PDF documents chunked at 1000 chars with 200 overlap",
+    "Vectors stored permanently in Qdrant collection 'kmu-legal'",
+    "Runs entirely on self-hosted Docker via Dokploy",
+    "No-code pipeline built in Flowise (5 nodes)",
+    "Week 6 MVP — built as part of IC Builder Stack"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Flowise pipeline export / JSON config",
+      "Qdrant collection structure and ingested documents",
+      "Docker Compose configuration and environment variables",
+      "Deployment credentials and infrastructure details"
+    ],
+    "label": "Pipeline config, infrastructure details, and documents are available on request"
+  }
+}

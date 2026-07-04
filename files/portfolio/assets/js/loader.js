@@ -14,8 +14,9 @@ const ROOT = (() => {
 })();
 
 async function fetchJSON(path) {
-  const res = await fetch(ROOT + path);
-  if (!res.ok) throw new Error(`Failed to load ${path}`);
+  const url = `${ROOT}${path}${path.includes('?') ? '&' : '?'}_=${Date.now()}`;
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Failed to load ${path} (${res.status})`);
   return res.json();
 }
 
@@ -36,7 +37,7 @@ function buildNav(owner, activePage) {
   if (!nav) return;
   nav.innerHTML = `
     <div class="nav-inner">
-      <a class="nav-logo" href="${ROOT}index.html">${owner.name.split(' ').slice(-1)[0]}</a>
+      <a class="nav-logo" href="${ROOT}index.html">${owner.name}</a>
       <ul class="nav-links">
         <li><a href="${ROOT}index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
         <li><a href="${ROOT}portfolio/index.html" ${activePage === 'portfolio' ? 'class="active"' : ''}>Portfolio</a></li>
@@ -52,8 +53,7 @@ function buildFooter(owner) {
   const year = new Date().getFullYear();
   footer.innerHTML = `
     <p>${owner.name} &nbsp;·&nbsp; 
-      <a href="${owner.socials.linkedin}" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; 
-      <a href="${owner.socials.github}" target="_blank" rel="noopener">GitHub</a>
+      <a href="${owner.socials.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
     </p>
     <p style="margin-top:6px; font-size:11px;">© ${year} — ${owner.domain}</p>
   `;

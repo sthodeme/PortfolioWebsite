@@ -9,6 +9,15 @@
     "order": 1
   },
   {
+    "slug": "kmu-assistant-flowise",
+    "title": "KMU Assistant (Flowise)",
+    "status": "mvp",
+    "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
+    "tags": ["Flowise", "RAG", "Qdrant", "OpenAI", "Anthropic Claude", "Docker"],
+    "featured": true,
+    "order": 3
+  },
+  {
     "slug": "cv-recognition",
     "title": "CV Recognition App",
     "status": "mvp",
@@ -16,5 +25,14 @@
     "tags": ["Computer Vision", "NLP", "Python", "ML"],
     "featured": true,
     "order": 2
+  },
+  {
+    "slug": "sap-inventory-dashboard",
+    "title": "SAP Inventory Dashboard Suite",
+    "status": "mvp",
+    "tagline": "Streamlit web app that consolidates 7 SAP export files and generates interactive inventory analysis dashboards.",
+    "tags": ["Python", "Streamlit", "Pandas", "Plotly", "Docker", "SAP"],
+    "featured": true,
+    "order": 4
   }
 ]
