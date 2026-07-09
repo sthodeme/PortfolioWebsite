@@ -10,15 +10,11 @@
   "screenshots": [
     {
       "file": "assets/images/projects/kmu-assistant/image1.jpg",
-      "caption": "Streamlit chat interface"
+      "caption": "Streamlit chat interface (showing Question and Answer)"
     },
     {
       "file": "assets/images/projects/kmu-assistant/image2.jpg",
-      "caption": "Document ingestion pipeline"
-    },
-    {
-      "file": "assets/images/projects/kmu-assistant/image3.jpg",
-      "caption": "RAG retrieval over domain PDFs"
+      "caption": "VPS resources usage"
     }
   ],
   "stack": [

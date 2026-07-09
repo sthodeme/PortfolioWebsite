@@ -10,15 +10,15 @@
   "screenshots": [
     {
       "file": "assets/images/projects/sap-inventory-dashboard/image1.jpg",
-      "caption": "Dashboard overview"
+      "caption": "Block Diagram"
     },
     {
       "file": "assets/images/projects/sap-inventory-dashboard/image2.jpg",
-      "caption": "Inventory trend charts"
+      "caption": "Input data extracted from SAP"
     },
     {
       "file": "assets/images/projects/sap-inventory-dashboard/image3.jpg",
-      "caption": "Vendor analysis view"
+      "caption": "One of many inventory trend charts"
     }
   ],
   "stack": [
