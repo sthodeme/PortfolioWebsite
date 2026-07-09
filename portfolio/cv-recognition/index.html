@@ -65,12 +65,25 @@
       color: var(--col-text-faint);
       overflow: hidden;
       position: relative;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .screenshot-slot:hover {
+      border-color: var(--col-accent);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    .screenshot-slot:focus-visible {
+      outline: 2px solid var(--col-accent);
+      outline-offset: 2px;
     }
     .screenshot-slot.main-shot { aspect-ratio: 16/9; }
     .screenshot-slot img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      position: absolute; inset: 0;
+      display: block;
+      border-radius: var(--radius-md);
     }
     .screenshot-slot .ss-placeholder {
       display: flex;
@@ -80,8 +93,15 @@
     }
     .screenshot-slot .ss-placeholder i { font-size: 28px; }
     .screenshot-slot .ss-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.45);
+      color: white;
       font-size: 11px;
-      color: var(--col-text-faint);
+      padding: 4px 8px;
+      text-align: center;
     }
 
     /* Info grid */
@@ -152,6 +172,53 @@
       gap: 7px;
     }
     .restricted-items li i { font-size: 13px; color: var(--col-text-faint); }
+
+    /* Screenshot lightbox */
+    .ss-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px 16px;
+      background: rgba(0, 0, 0, 0.88);
+    }
+    .ss-lightbox[hidden] { display: none; }
+    .ss-lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .ss-lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
+    .ss-lightbox-img {
+      max-width: min(100%, 1200px);
+      max-height: calc(100vh - 100px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+    .ss-lightbox-caption {
+      margin: 0;
+      max-width: min(100%, 720px);
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -211,6 +278,12 @@
 
 </main>
 
+<div id="ss-lightbox" class="ss-lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot preview">
+  <button type="button" class="ss-lightbox-close" aria-label="Close preview">&times;</button>
+  <img class="ss-lightbox-img" src="" alt="" />
+  <p class="ss-lightbox-caption"></p>
+</div>
+
 <footer id="site-footer"></footer>
 
 <script src="../../assets/js/loader.js"></script>
@@ -250,21 +323,55 @@ const slug = (() => {
 
   // Screenshots
   const screenshotGrid = document.getElementById('screenshot-grid');
+  const lightbox = document.getElementById('ss-lightbox');
+  const lightboxImg = lightbox.querySelector('.ss-lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.ss-lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.ss-lightbox-close');
+  let lastFocusedScreenshot = null;
+
+  function openScreenshotLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption;
+    lightboxCaption.textContent = caption;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  function closeScreenshotLightbox() {
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    lastFocusedScreenshot?.focus();
+  }
+
+  lightboxClose.addEventListener('click', closeScreenshotLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeScreenshotLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.hidden) closeScreenshotLightbox();
+  });
+
   if (project.screenshots && project.screenshots.length > 0) {
     screenshotGrid.innerHTML = project.screenshots.map((s, i) => {
       const isMain = i === 0;
+      const src = `../../${s.file}`;
       return `
-        <div class="screenshot-slot ${isMain ? 'main-shot' : ''}">
-          <div class="ss-placeholder">
-            <i class="ti ti-photo" aria-hidden="true"></i>
-            <span class="ss-caption">${s.caption}</span>
-          </div>
-        </div>
+        <a href="${src}" class="screenshot-slot ${isMain ? 'main-shot' : ''}" aria-label="View full screenshot: ${s.caption}">
+          <img src="${src}" alt="${s.caption}" loading="lazy" />
+          <span class="ss-caption">${s.caption}</span>
+        </a>
       `;
-      /* When real images are added, replace ss-placeholder with:
-         <img src="../../${s.file}" alt="${s.caption}" loading="lazy" />
-      */
     }).join('');
+
+    screenshotGrid.querySelectorAll('.screenshot-slot').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        lastFocusedScreenshot = link;
+        openScreenshotLightbox(link.href, link.querySelector('img').alt);
+      });
+    });
   } else {
     screenshotGrid.innerHTML = `<div class="screenshot-slot main-shot"><div class="ss-placeholder"><i class="ti ti-photo-off" aria-hidden="true"></i><span class="ss-caption">No screenshots yet</span></div></div>`;
   }
