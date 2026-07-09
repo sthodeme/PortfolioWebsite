@@ -68,4 +68,90 @@ function tagList(tags) {
   return tags.map(t => `<span class="tag">${t}</span>`).join('');
 }
 
-window.SiteLoader = { loadOwner, loadProjects, loadProject, buildNav, buildFooter, statusBadge, tagList, ROOT };
+let lastFocusedScreenshot = null;
+
+function ensureScreenshotLightbox() {
+  let lightbox = document.getElementById('ss-lightbox');
+  if (lightbox) return lightbox;
+
+  lightbox = document.createElement('div');
+  lightbox.id = 'ss-lightbox';
+  lightbox.className = 'ss-lightbox';
+  lightbox.hidden = true;
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Screenshot preview');
+  lightbox.innerHTML = `
+    <button type="button" class="ss-lightbox-close" aria-label="Close preview">&times;</button>
+    <img class="ss-lightbox-img" alt="" />
+    <p class="ss-lightbox-caption"></p>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('.ss-lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.ss-lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.ss-lightbox-close');
+
+  function closeScreenshotLightbox() {
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    lastFocusedScreenshot?.focus();
+  }
+
+  function openScreenshotLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption;
+    lightboxCaption.textContent = caption;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  lightboxClose.addEventListener('click', closeScreenshotLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeScreenshotLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.hidden) closeScreenshotLightbox();
+  });
+
+  lightbox._open = openScreenshotLightbox;
+  return lightbox;
+}
+
+function initScreenshotGrid(gridEl, screenshots, assetPrefix = '../../') {
+  if (!gridEl) return;
+
+  if (screenshots && screenshots.length > 0) {
+    gridEl.innerHTML = screenshots.map((s, i) => {
+      const isMain = i === 0;
+      const src = `${assetPrefix}${s.file}`;
+      return `
+        <a href="${src}" class="screenshot-slot ${isMain ? 'main-shot' : ''}" data-ss-caption="${s.caption.replace(/"/g, '&quot;')}" aria-label="View full screenshot: ${s.caption.replace(/"/g, '&quot;')}">
+          <img src="${src}" alt="${s.caption.replace(/"/g, '&quot;')}" loading="lazy" draggable="false" />
+          <span class="ss-caption">${s.caption}</span>
+        </a>
+      `;
+    }).join('');
+
+    const lightbox = ensureScreenshotLightbox();
+
+    if (gridEl._ssClickHandler) {
+      gridEl.removeEventListener('click', gridEl._ssClickHandler);
+    }
+    gridEl._ssClickHandler = (e) => {
+      const link = e.target.closest('a.screenshot-slot');
+      if (!link || !gridEl.contains(link)) return;
+      e.preventDefault();
+      lastFocusedScreenshot = link;
+      const caption = link.dataset.ssCaption || link.querySelector('img')?.alt || '';
+      lightbox._open(link.getAttribute('href'), caption);
+    };
+    gridEl.addEventListener('click', gridEl._ssClickHandler);
+  } else {
+    gridEl.innerHTML = `<div class="screenshot-slot main-shot"><div class="ss-placeholder"><i class="ti ti-photo-off" aria-hidden="true"></i><span class="ss-caption">No screenshots yet</span></div></div>`;
+  }
+}
+
+window.SiteLoader = { loadOwner, loadProjects, loadProject, buildNav, buildFooter, statusBadge, tagList, initScreenshotGrid, ROOT };
