@@ -27,7 +27,7 @@
     "order": 2
   },
   {
-    "slug": "RAG-spec-extractor",
+    "slug": "rag-spec-extractor",
     "title": "RAG Spec Extractor",
     "status": "production",
     "tagline": "A RAG Spec Extractor built using no-code with n8n, Ollama and Claude.",
