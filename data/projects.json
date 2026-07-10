@@ -6,7 +6,7 @@
     "tagline": "AI-powered assistant tailored for small and medium enterprises (KMU).",
     "tags": ["AI", "NLP", "Python", "LLM"],
     "featured": true,
-    "order": 1
+    "order": 3
   },
   {
     "slug": "kmu-assistant-flowise",
@@ -15,7 +15,16 @@
     "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
     "tags": ["Flowise", "RAG", "Qdrant", "OpenAI", "Anthropic Claude", "Docker"],
     "featured": true,
-    "order": 3
+    "order": 1
+  },
+  {
+    "slug": "network-file-finder",
+    "title": "Network File Finder",
+    "status": "mvp",
+    "tagline": "A Network File Finder built using no-code with n8n, Ollama and Claude.",
+    "tags": ["n8n", "Ollama", "Anthropic Claude"],
+    "featured": true,
+    "order": 2
   },
   {
     "slug": "cv-recognition",
@@ -24,7 +33,7 @@
     "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
     "tags": ["Computer Vision", "NLP", "Python", "ML"],
     "featured": true,
-    "order": 2
+    "order": 5
   },
   {
     "slug": "sap-inventory-dashboard",

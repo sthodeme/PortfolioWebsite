@@ -10,15 +10,7 @@
   "screenshots": [
     {
       "file": "assets/images/projects/kmu-assistant-flowise/image1.jpg",
-      "caption": "Flowise pipeline canvas"
-    },
-    {
-      "file": "assets/images/projects/kmu-assistant-flowise/image2.jpg",
-      "caption": "RAG chatbot interface"
-    },
-    {
-      "file": "assets/images/projects/kmu-assistant-flowise/image3.jpg",
-      "caption": "Qdrant vector store"
+      "caption": "Flowise RAG chatbot canvas"
     }
   ],
   "stack": [

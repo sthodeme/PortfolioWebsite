@@ -1,19 +1,19 @@
 {
-  "slug": "kmu-assistant",
-  "title": "KMU Assistant",
+  "slug": "network-file-finder",
+  "title": "Network File Finder",
   "status": "mvp",
   "tagline": "RAG chatbot for German SMEs — grounded answers on DSGVO and employment law from your own documents.",
   "description": "KMU Assistant (KMU-Assistent) is a retrieval-augmented chatbot built for kleine und mittlere Unternehmen in Germany. It ingests your PDF knowledge base—DSGVO and Arbeitsrecht sources—and answers employee and compliance questions with citations grounded in those documents. Local vector search keeps retrieval on your infrastructure; the Anthropic API generates the final responses.",
   "launchDate": "2024",
   "liveUrl": "",
-  "githubUrl": "https://github.com/sthodeme/kmu-assistent",
+  "githubUrl": "",
   "screenshots": [
     {
-      "file": "assets/images/projects/kmu-assistant/image1.jpg",
+      "file": "assets/images/projects/network-file-finder/image1.jpg",
       "caption": "Streamlit RAG chatbot interface (showing Question and Answer)"
     },
     {
-      "file": "assets/images/projects/kmu-assistant/image2.jpg",
+      "file": "assets/images/projects/network-file-finder/image2.jpg",
       "caption": "VPS resources usage"
     }
   ],
