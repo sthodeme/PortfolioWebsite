@@ -10,7 +10,7 @@
   "screenshots": [
     {
       "file": "assets/images/projects/rag-spec-extractor/image1.jpg",
-      "caption": "Browser upload interface — drag and drop PDF specification files to start extraction"
+      "caption": "UI showing the upload and extraction process"
     },
     {
       "file": "assets/images/projects/rag-spec-extractor/image2.jpg",
