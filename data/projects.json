@@ -29,7 +29,7 @@
   {
     "slug": "rag-spec-extractor",
     "title": "RAG Spec Extractor",
-    "status": "production",
+    "status": "development",
     "tagline": "A RAG Spec Extractor built using no-code with n8n, Ollama and Claude.",
     "tags": ["n8n", "Ollama", "Anthropic Claude"],
     "featured": true,
