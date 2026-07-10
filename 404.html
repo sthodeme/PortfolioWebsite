@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Portfolio</title>
+  <script>
+    (function () {
+      const path = window.location.pathname;
+      const ragMatch = path.match(/^(.*\/portfolio\/)RAG-spec-extractor(\/.*)?$/i);
+      if (ragMatch) {
+        const target = ragMatch[1] + 'rag-spec-extractor' + (ragMatch[2] || '/index.html');
+        window.location.replace(target);
+        return;
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .not-found {
+      max-width: 420px;
+    }
+    .not-found h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .not-found p {
+      color: var(--col-text-muted);
+      margin-bottom: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="not-found">
+    <h1>Page not found</h1>
+    <p>The page you requested does not exist or may have moved.</p>
+    <a href="portfolio/index.html" class="btn btn-primary">Back to portfolio</a>
+  </div>
+</body>
+</html>

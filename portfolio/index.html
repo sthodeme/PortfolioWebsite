@@ -180,7 +180,7 @@
 
 <footer id="site-footer"></footer>
 
-<script src="../assets/js/loader.js?v=3"></script>
+<script src="../assets/js/loader.js?v=4"></script>
 <script>
 const ICONS = {
   'kmu-assistant': 'ti-message-chatbot',
@@ -210,7 +210,7 @@ const ICONS = {
     grid.innerHTML = filtered.map((p, i) => {
       const icon = ICONS[p.slug] || ICONS.default;
       return `
-        <a href="${ROOT}portfolio/${p.slug}/index.html" class="proj-card fade-up" style="animation-delay:${0.1 + i * 0.07}s">
+        <a href="${ROOT}portfolio/${p.slug.toLowerCase()}/index.html" class="proj-card fade-up" style="animation-delay:${0.1 + i * 0.07}s">
           <div class="proj-card-top">
             <div>
               ${statusBadge(p.status)}
