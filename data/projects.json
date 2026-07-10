@@ -2,7 +2,7 @@
   {
     "slug": "kmu-assistant",
     "title": "KMU Assistant",
-    "status": "mvp",
+    "status": "production",
     "tagline": "AI-powered assistant tailored for small and medium enterprises (KMU).",
     "tags": ["AI", "NLP", "Python", "LLM"],
     "featured": true,
@@ -11,7 +11,7 @@
   {
     "slug": "kmu-assistant-flowise",
     "title": "KMU Assistant (Flowise)",
-    "status": "mvp",
+    "status": "production",
     "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
     "tags": ["Flowise", "RAG", "Qdrant", "OpenAI", "Anthropic Claude", "Docker"],
     "featured": true,
@@ -20,7 +20,7 @@
   {
     "slug": "network-file-finder",
     "title": "Network File Finder",
-    "status": "mvp",
+    "status": "production",
     "tagline": "A Network File Finder built using no-code with n8n, Ollama and Claude.",
     "tags": ["n8n", "Ollama", "Anthropic Claude"],
     "featured": true,

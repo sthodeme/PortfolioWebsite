@@ -68,7 +68,7 @@ nav {
 }
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 16px;           /* slightly smaller so full name fits */
+  font-size: 19px;
   color: var(--col-text);
   text-decoration: none;
   letter-spacing: -0.01em;
@@ -80,7 +80,7 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  font-size: 14px;           /* was 13px */
+  font-size: 16px;
   color: var(--col-text-muted);
   text-decoration: none;
   padding: 5px 12px;
@@ -227,8 +227,8 @@ h3 { font-size: 1.05rem; font-weight: 500; }
 @media (max-width: 600px) {
   .page-wrap { padding: 0 18px 60px; }
   .nav-inner { padding: 0 18px; }
-  .nav-logo { font-size: 14px; }
-  .nav-links a { padding: 5px 8px; font-size: 13px; }
+  .nav-logo { font-size: 16px; }
+  .nav-links a { padding: 5px 8px; font-size: 15px; }
 }
 
 /* ── FOOTER ── */

@@ -3,9 +3,9 @@
   "title": "KMU Assistant (Flowise)",
   "status": "mvp",
   "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
-  "description": "This is a rebuilt version of the original KMU Assistant, now implemented entirely using Flowise — a no-code/low-code LLM orchestration tool. The project was developed as a Week 6 MVP and serves as a plug-and-play RAG chatbot for KMU legal queries. It uses a full retrieval-augmented generation pipeline: PDF documents are ingested, split into chunks, embedded via OpenAI, stored in a Qdrant vector database, and answered by Anthropic Claude. The entire stack runs on Docker via Dokploy and is hosted at thodeme.de.",
+  "description": "This is a rebuilt version of the original KMU Assistant, now implemented entirely using Flowise — a no-code/low-code LLM orchestration tool. The project was developed as a Week 6 MVP and serves as a plug-and-play RAG chatbot for KMU legal queries. It uses a full retrieval-augmented generation pipeline: PDF documents are ingested, split into chunks, embedded via OpenAI, stored in a Qdrant vector database, and answered by Anthropic Claude. The entire stack runs on Docker via Dokploy. Click 'Live Project' box above to try the Tool. " ,
   "launchDate": "June 2026",
-  "liveUrl": "https://thodeme.de",
+  "liveUrl": "https://flowise.thodeme.de/compare.html",
   "githubUrl": "",
   "screenshots": [
     {

@@ -6,7 +6,7 @@
   "description": "CV Recognition App is a full-stack computer vision product for running pretrained YOLO `.pt` models in the browser. Users pick a model, run inference on uploaded images or a live camera feed, and download annotated results. A FastAPI backend serves model metadata and inference; a Vite + React client handles the mobile-first UX with a local dev proxy to the API.",
   "launchDate": "2024",
   "liveUrl": "",
-  "githubUrl": "https://github.com/sthodeme/CV_App",
+  "githubUrl": "",
   "screenshots": [
     {
       "file": "assets/images/projects/cv-recognition/image1.jpg",
