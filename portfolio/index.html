@@ -181,7 +181,7 @@
 
 <footer id="site-footer"></footer>
 
-<script src="../assets/js/loader.js?v=5"></script>
+<script src="../assets/js/loader.js?v=6"></script>
 <script>
 const ICONS = {
   'kmu-assistant': 'ti-message-chatbot',
@@ -189,6 +189,12 @@ const ICONS = {
   'cv-recognition': 'ti-id-badge',
   default: 'ti-code'
 };
+
+function normalizeStatus(status) {
+  const normalized = String(status || '').trim().toLowerCase().replace(/\s+/g, '-');
+  if (normalized === 'under-development') return 'development';
+  return normalized;
+}
 
 (async () => {
   try {
@@ -202,7 +208,7 @@ const ICONS = {
   const sorted = [...projects].sort((a, b) => a.order - b.order);
 
   function renderGrid(filter) {
-    const filtered = filter === 'all' ? sorted : sorted.filter(p => p.status === filter);
+    const filtered = filter === 'all' ? sorted : sorted.filter(p => normalizeStatus(p.status) === filter);
     const grid = document.getElementById('projects-grid');
     if (filtered.length === 0) {
       grid.innerHTML = `<div class="empty-state">No projects with this status yet.</div>`;
@@ -243,9 +249,9 @@ const ICONS = {
   });
 
   // Portfolio sub
-  const dev = projects.filter(p => p.status === 'development').length;
+  const dev = projects.filter(p => normalizeStatus(p.status) === 'development').length;
   document.getElementById('portfolio-sub').textContent =
-    `${projects.length} project${projects.length !== 1 ? 's' : ''} — ${projects.filter(p=>p.status==='mvp').length} MVP, ${dev ? `${dev} Under development, ` : ''}${projects.filter(p=>p.status==='production').length} Production`;
+    `${projects.length} project${projects.length !== 1 ? 's' : ''} — ${projects.filter(p=>normalizeStatus(p.status)==='mvp').length} MVP, ${dev ? `${dev} Under development, ` : ''}${projects.filter(p=>normalizeStatus(p.status)==='production').length} Production`;
 
   document.title = `Portfolio — ${owner.name}`;
   } catch (err) {

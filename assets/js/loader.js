@@ -60,8 +60,9 @@ function buildFooter(owner) {
 }
 
 function statusBadge(status) {
-  if (status === 'production') return `<span class="badge badge-prod"><i class="ti ti-circle-check" aria-hidden="true"></i> Production</span>`;
-  if (status === 'development') return `<span class="badge badge-dev"><i class="ti ti-progress" aria-hidden="true"></i> Under development</span>`;
+  const normalized = String(status || '').trim().toLowerCase().replace(/\s+/g, '-');
+  if (normalized === 'production') return `<span class="badge badge-prod"><i class="ti ti-circle-check" aria-hidden="true"></i> Production</span>`;
+  if (normalized === 'development' || normalized === 'under-development') return `<span class="badge badge-dev"><i class="ti ti-progress" aria-hidden="true"></i> Under development</span>`;
   return `<span class="badge badge-mvp"><i class="ti ti-flask" aria-hidden="true"></i> MVP</span>`;
 }
 
