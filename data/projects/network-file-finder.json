@@ -1,42 +1,45 @@
 {
   "slug": "network-file-finder",
-  "title": "Network File Finder",
-  "status": "mvp",
-  "tagline": "RAG chatbot for German SMEs — grounded answers on DSGVO and employment law from your own documents.",
-  "description": "KMU Assistant (KMU-Assistent) is a retrieval-augmented chatbot built for kleine und mittlere Unternehmen in Germany. It ingests your PDF knowledge base—DSGVO and Arbeitsrecht sources—and answers employee and compliance questions with citations grounded in those documents. Local vector search keeps retrieval on your infrastructure; the Anthropic API generates the final responses.",
-  "launchDate": "2024",
+  "title": "Lightning Arrester File Search",
+  "status": "production",
+  "tagline": "Lightning Arrester file retrieval tool — instant specification file delivery from network drive using parameter-based search.",
+  "description": "JVS Lightning Arrester File Search is an internal LAN-based file retrieval tool built for JVS Switchgears engineering team. It searches company network drive folders using technical parameters — voltage rating, discharge current, arrester class, housing type, and customer — and delivers matching specification files to a secure session folder within seconds. Files auto-delete after 15 minutes. The tool runs entirely on the company's local network with zero cloud dependency, zero subscription cost, and supports multiple simultaneous users without conflicts.",
+  "launchDate": "2026",
   "liveUrl": "",
   "githubUrl": "",
   "screenshots": [
     {
       "file": "assets/images/projects/network-file-finder/image1.jpg",
-      "caption": "Streamlit RAG chatbot interface (showing Question and Answer)"
+      "caption": "Parameter-based search interface showing Customer, Rating, Housing and other dropdowns with live keyword preview"
     },
     {
       "file": "assets/images/projects/network-file-finder/image2.jpg",
-      "caption": "VPS resources usage"
+      "caption": "Search results with session folder delivery, copy path button and 15-minute auto-delete countdown"
     }
   ],
   "stack": [
-    { "icon": "ti-brain", "label": "Anthropic API" },
-    { "icon": "ti-brand-python", "label": "Python / LangChain" },
-    { "icon": "ti-database", "label": "ChromaDB + embeddings" },
-    { "icon": "ti-layout-dashboard", "label": "Streamlit UI" }
+    { "icon": "ti-arrows-shuffle", "label": "n8n (workflow automation)" },
+    { "icon": "ti-brain", "label": "Flowise (AI interface)" },
+    { "icon": "ti-cpu", "label": "Ollama · llama3.1:8b" },
+    { "icon": "ti-terminal-2", "label": "PowerShell (network drive search)" },
+    { "icon": "ti-brand-html5", "label": "HTML / CSS / JavaScript" },
+    { "icon": "ti-server", "label": "Windows Server · LAN deployment" }
   ],
   "highlights": [
-    "RAG pipeline over DSGVO and Arbeitsrecht PDFs tailored to German SME workflows",
-    "Local vector search with ChromaDB and sentence-transformers embeddings",
-    "Ingestion workflow from raw PDFs to queryable knowledge base (`python -m src.ingest`)",
-    "Streamlit chat UI for multi-turn Q&A after one-time document setup"
+    "Parameter-based file search across customer folders on company network drive",
+    "Session-based file delivery with auto-cleanup after 15 minutes — no manual deletion needed",
+    "Supports digital and scanned PDFs — no manual folder browsing required",
+    "Multi-user support — each session is isolated with a unique timestamped folder",
+    "100% local — no internet, no cloud, no data leaves the building"
   ],
   "restricted": {
     "enabled": true,
     "items": [
-      "Client or company names and deployment environments",
-      "Source PDF licensing and proprietary document sets",
-      "Internal architecture diagrams and ingestion tuning",
-      "Prompt templates, evaluation metrics, and usage data"
+      "Customer folder names and network drive paths",
+      "File naming conventions and internal document structure",
+      "n8n workflow configurations and webhook endpoints",
+      "Server IP addresses and LAN architecture details"
     ],
-    "label": "Client details, source documents, architecture, and metrics are available on request"
+    "label": "Internal network details, folder structure, and deployment configuration available on request"
   }
 }

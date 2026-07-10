@@ -1,0 +1,50 @@
+{
+  "slug": "rag-spec-extractor",
+  "title": "Surge Arrester Specification Extractor",
+  "status": "production",
+  "tagline": "AI-powered parameter extraction from surge arrester PDF specifications — upload, extract, download filled Excel in minutes.",
+  "description": "JVS Surge Arrester Specification Extractor is an internal AI tool that automatically extracts 36 technical parameters from surge arrester specification PDF documents. Engineers upload one or more PDFs through a browser-based interface, and the system uses a locally hosted 32-billion parameter language model (qwen2.5:32b via Ollama) to identify and extract parameters such as rated voltage, MCOV, TOV capability, creepage distance, residual discharge levels, and mechanical properties. The output is a structured Excel report with extracted values, units, confidence levels (High/Medium/Low), and source page numbers — ready for engineer validation. Supports both digital and scanned PDFs. Runs entirely on the company LAN with no cloud dependency.",
+  "launchDate": "2026",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/rag-spec-extractor/image1.jpg",
+      "caption": "Browser upload interface — drag and drop PDF specification files to start extraction"
+    },
+    {
+      "file": "assets/images/projects/rag-spec-extractor/image2.jpg",
+      "caption": "Extraction complete — 36 parameters processed with High/Medium/Low confidence summary and one-click Excel download"
+    },
+    {
+      "file": "assets/images/projects/rag-spec-extractor/image3.jpg",
+      "caption": "Excel output report showing extracted values, confidence color coding, page references and source PDF columns"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-cpu", "label": "Ollama · qwen2.5:32b (32B parameter local LLM)" },
+    { "icon": "ti-brand-python", "label": "Python · Flask (web server)" },
+    { "icon": "ti-file-text", "label": "PyMuPDF (PDF text extraction)" },
+    { "icon": "ti-scan", "label": "Tesseract OCR (scanned PDF support)" },
+    { "icon": "ti-table", "label": "openpyxl (Excel report generation)" },
+    { "icon": "ti-server", "label": "Windows Server · LAN deployment · NSSM" }
+  ],
+  "highlights": [
+    "Extracts 36 technical parameters from surge arrester PDF specifications automatically",
+    "Supports both digital PDFs (text extraction) and scanned PDFs (Tesseract OCR at 300 DPI)",
+    "Confidence scoring per parameter — High / Medium / Low with source page number",
+    "32B parameter local LLM (qwen2.5:32b) — no API cost, no data leaves the network",
+    "Background threading — browser stays responsive during 30-40 minute extraction",
+    "V0 system prompt with engineer validation workflow built in for continuous improvement"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Parameter definitions and system prompt content (V0 — under engineer review)",
+      "Customer specification PDFs and extracted data",
+      "Server IP addresses and internal network configuration",
+      "Flask service configuration and NSSM deployment details"
+    ],
+    "label": "Parameter definitions, specification documents, and deployment configuration available on request"
+  }
+}

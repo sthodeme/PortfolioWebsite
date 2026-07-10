@@ -6,7 +6,7 @@
     "tagline": "AI-powered assistant tailored for small and medium enterprises (KMU).",
     "tags": ["AI", "NLP", "Python", "LLM"],
     "featured": true,
-    "order": 3
+    "order": 4
   },
   {
     "slug": "kmu-assistant-flowise",
@@ -27,6 +27,15 @@
     "order": 2
   },
   {
+    "slug": "RAG-spec-extractor",
+    "title": "RAG Spec Extractor",
+    "status": "production",
+    "tagline": "A RAG Spec Extractor built using no-code with n8n, Ollama and Claude.",
+    "tags": ["n8n", "Ollama", "Anthropic Claude"],
+    "featured": true,
+    "order": 3
+  },
+  {
     "slug": "cv-recognition",
     "title": "CV Recognition App",
     "status": "mvp",
@@ -42,6 +51,6 @@
     "tagline": "Streamlit web app that consolidates 7 SAP export files and generates interactive inventory analysis dashboards.",
     "tags": ["Python", "Streamlit", "Pandas", "Plotly", "Docker", "SAP"],
     "featured": true,
-    "order": 4
+    "order": 6
   }
 ]
