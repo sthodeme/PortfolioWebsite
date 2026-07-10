@@ -15,11 +15,8 @@
     {
       "file": "assets/images/projects/rag-spec-extractor/image2.jpg",
       "caption": "Extraction complete — 36 parameters processed with High/Medium/Low confidence summary and one-click Excel download"
-    },
-    {
-      "file": "assets/images/projects/rag-spec-extractor/image3.jpg",
-      "caption": "Excel output report showing extracted values, confidence color coding, page references and source PDF columns"
     }
+    
   ],
   "stack": [
     { "icon": "ti-cpu", "label": "Ollama · qwen2.5:32b (32B parameter local LLM)" },
