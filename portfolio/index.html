@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Sree Ram Gopal Reddy</title>
   <meta name="description" content="MVP and production-ready AI products by Sree Ram Gopal Reddy." />
-  <link rel="stylesheet" href="../assets/css/main.css?v=3" />
+  <link rel="stylesheet" href="../assets/css/main.css?v=4" />
   <style>
     .portfolio-header {
       padding: 3rem 0 2rem;
@@ -162,6 +162,7 @@
   <div class="filter-bar fade-up delay-1" id="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="mvp">MVP</button>
+    <button class="filter-btn" data-filter="planning">In planning</button>
     <button class="filter-btn" data-filter="development">Under development</button>
     <button class="filter-btn" data-filter="production">Production</button>
   </div>
@@ -181,7 +182,7 @@
 
 <footer id="site-footer"></footer>
 
-<script src="../assets/js/loader.js?v=6"></script>
+<script src="../assets/js/loader.js?v=7"></script>
 <script>
 const ICONS = {
   'kmu-assistant': 'ti-message-chatbot',
@@ -190,15 +191,9 @@ const ICONS = {
   default: 'ti-code'
 };
 
-function normalizeStatus(status) {
-  const normalized = String(status || '').trim().toLowerCase().replace(/\s+/g, '-');
-  if (normalized === 'under-development') return 'development';
-  return normalized;
-}
-
 (async () => {
   try {
-  const { loadOwner, loadProjects, buildNav, buildFooter, statusBadge, tagList, ROOT } = window.SiteLoader;
+  const { loadOwner, loadProjects, buildNav, buildFooter, statusBadge, normalizeStatus, statusSummary, tagList, ROOT } = window.SiteLoader;
   const [owner, projects] = await Promise.all([loadOwner(), loadProjects()]);
 
   buildNav(owner, 'portfolio');
@@ -249,9 +244,8 @@ function normalizeStatus(status) {
   });
 
   // Portfolio sub
-  const dev = projects.filter(p => normalizeStatus(p.status) === 'development').length;
   document.getElementById('portfolio-sub').textContent =
-    `${projects.length} project${projects.length !== 1 ? 's' : ''} — ${projects.filter(p=>normalizeStatus(p.status)==='mvp').length} MVP, ${dev ? `${dev} Under development, ` : ''}${projects.filter(p=>normalizeStatus(p.status)==='production').length} Production`;
+    `${projects.length} project${projects.length !== 1 ? 's' : ''} — ${statusSummary(projects)}`;
 
   document.title = `Portfolio — ${owner.name}`;
   } catch (err) {

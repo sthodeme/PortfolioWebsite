@@ -17,6 +17,8 @@
   --col-prod-bg: #E8F0F5;
   --col-dev: #5A3D2B;
   --col-dev-bg: #F5EBE8;
+  --col-plan: #4A3D5A;
+  --col-plan-bg: #EDE8F5;
 
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
@@ -154,6 +156,7 @@ h3 { font-size: 1.05rem; font-weight: 500; }
 .badge-mvp { background: var(--col-mvp-bg); color: var(--col-mvp); }
 .badge-prod { background: var(--col-prod-bg); color: var(--col-prod); }
 .badge-dev { background: var(--col-dev-bg); color: var(--col-dev); }
+.badge-plan { background: var(--col-plan-bg); color: var(--col-plan); }
 
 /* ── TAGS ── */
 .tag {

@@ -382,10 +382,10 @@
   </div>
 </div>
 
-<script src="assets/js/loader.js"></script>
+<script src="assets/js/loader.js?v=7"></script>
 <script>
 (async () => {
-  const { loadOwner, loadProjects, buildFooter, ROOT } = window.SiteLoader;
+  const { loadOwner, loadProjects, buildFooter, statusSummary, ROOT } = window.SiteLoader;
   const [owner, projects] = await Promise.all([loadOwner(), loadProjects()]);
 
   const nav = document.getElementById('site-nav');
@@ -436,12 +436,9 @@
   `).join('');
 
   // CTA count
-  const mvp = projects.filter(p => p.status === 'mvp').length;
-  const prod = projects.filter(p => p.status === 'production').length;
-  let sub = `${projects.length} project${projects.length !== 1 ? 's' : ''}`;
-  if (mvp) sub += ` · ${mvp} MVP`;
-  if (prod) sub += ` · ${prod} Production`;
-  document.getElementById('cta-sub').textContent = sub;
+  const count = `${projects.length} project${projects.length !== 1 ? 's' : ''}`;
+  const breakdown = statusSummary(projects).replace(/, /g, ' · ');
+  document.getElementById('cta-sub').textContent = breakdown ? `${count} · ${breakdown}` : count;
 
   document.title = `${owner.name} — AI Product Developer`;
 

@@ -2,6 +2,7 @@
  * loader.js — JSON-driven site engine
  * All content is driven by /data/owner.json and /data/projects.json
  * To add a project: add entry to projects.json + create data/projects/[slug].json
+ * Status keys: mvp | planning | development | production
  */
 
 const ROOT = (() => {
@@ -59,11 +60,39 @@ function buildFooter(owner) {
   `;
 }
 
-function statusBadge(status) {
+function normalizeStatus(status) {
   const normalized = String(status || '').trim().toLowerCase().replace(/\s+/g, '-');
-  if (normalized === 'production') return `<span class="badge badge-prod"><i class="ti ti-circle-check" aria-hidden="true"></i> Production</span>`;
-  if (normalized === 'development' || normalized === 'under-development') return `<span class="badge badge-dev"><i class="ti ti-progress" aria-hidden="true"></i> Under development</span>`;
+  if (normalized === 'under-development') return 'development';
+  if (normalized === 'in-planning') return 'planning';
+  return normalized;
+}
+
+function statusBadge(status) {
+  const key = normalizeStatus(status);
+  if (key === 'production') return `<span class="badge badge-prod"><i class="ti ti-circle-check" aria-hidden="true"></i> Production</span>`;
+  if (key === 'development') return `<span class="badge badge-dev"><i class="ti ti-progress" aria-hidden="true"></i> Under development</span>`;
+  if (key === 'planning') return `<span class="badge badge-plan"><i class="ti ti-clipboard-list" aria-hidden="true"></i> In planning</span>`;
   return `<span class="badge badge-mvp"><i class="ti ti-flask" aria-hidden="true"></i> MVP</span>`;
+}
+
+const STATUS_LABELS = {
+  mvp: 'MVP',
+  planning: 'In planning',
+  development: 'Under development',
+  production: 'Production',
+};
+
+function statusSummary(projects) {
+  const counts = {};
+  projects.forEach(p => {
+    const key = normalizeStatus(p.status);
+    counts[key] = (counts[key] || 0) + 1;
+  });
+  const order = ['mvp', 'planning', 'development', 'production'];
+  const parts = order
+    .filter(key => counts[key])
+    .map(key => `${counts[key]} ${STATUS_LABELS[key] || key}`);
+  return parts.join(', ');
 }
 
 function tagList(tags) {
@@ -156,4 +185,4 @@ function initScreenshotGrid(gridEl, screenshots, assetPrefix = '../../') {
   }
 }
 
-window.SiteLoader = { loadOwner, loadProjects, loadProject, buildNav, buildFooter, statusBadge, tagList, initScreenshotGrid, ROOT };
+window.SiteLoader = { loadOwner, loadProjects, loadProject, buildNav, buildFooter, statusBadge, normalizeStatus, statusSummary, tagList, initScreenshotGrid, ROOT };
