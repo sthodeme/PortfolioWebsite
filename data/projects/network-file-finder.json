@@ -9,6 +9,10 @@
   "githubUrl": "",
   "screenshots": [
     {
+      "file": "assets/images/projects/rag-spec-extractor/image3.jpg",
+      "caption": "First page with short description"
+    },
+    {
       "file": "assets/images/projects/network-file-finder/image1.jpg",
       "caption": "Parameter-based search interface showing Customer, Rating, Housing and other dropdowns with live keyword preview"
     },
