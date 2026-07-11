@@ -9,6 +9,10 @@
   "githubUrl": "",
   "screenshots": [
     {
+      "file": "assets/images/projects/rag-spec-extractor/image3.jpg",
+      "caption": "First page with short description"
+    },
+    {
       "file": "assets/images/projects/rag-spec-extractor/image1.jpg",
       "caption": "UI showing the upload and extraction process"
     },
