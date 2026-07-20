@@ -4,7 +4,7 @@
   "status": "mvp",
   "tagline": "RAG chatbot for German SMEs — grounded answers on DSGVO and employment law from your own documents.",
   "description": "KMU Assistant (KMU-Assistent) is a retrieval-augmented chatbot built for kleine und mittlere Unternehmen in Germany. It ingests your PDF knowledge base—DSGVO and Arbeitsrecht sources—and answers employee and compliance questions with citations grounded in those documents. Local vector search keeps retrieval on your infrastructure; the Anthropic API generates the final responses. Click 'Live Project' box above to try the Tool.",
-  "launchDate": "2024",
+  "launchDate": "2026",
   "liveUrl": "https://kmu.thodeme.de/",
   "githubUrl": "https://github.com/sthodeme/kmu-assistent",
   "screenshots": [

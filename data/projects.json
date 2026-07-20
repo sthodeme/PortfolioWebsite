@@ -37,7 +37,7 @@
   },
   {
     "slug": "cv-recognition",
-    "title": "CV Recognition App",
+    "title": "CV Multi-Model App",
     "status": "mvp",
     "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
     "tags": ["Computer Vision", "NLP", "Python", "ML"],

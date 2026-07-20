@@ -1,11 +1,11 @@
 {
   "slug": "cv-recognition",
-  "title": "CV Recognition App",
+  "title": "CV Multi-Model App",
   "status": "mvp",
   "tagline": "Mobile-friendly object detection — run YOLO models on uploads or live camera from the browser.",
-  "description": "CV Recognition App is a full-stack computer vision product for running pretrained YOLO `.pt` models in the browser. Users pick a model, run inference on uploaded images or a live camera feed, and download annotated results. A FastAPI backend serves model metadata and inference; a Vite + React client handles the mobile-first UX with a local dev proxy to the API.",
-  "launchDate": "2024",
-  "liveUrl": "",
+  "description": "CV Multi-Model App is a full-stack computer vision product for running pretrained YOLO `.pt` models in the browser. Users pick a model, run inference on uploaded images or a live camera feed, and download annotated results. A FastAPI backend serves model metadata and inference; a Vite + React client handles the mobile-first UX with a local dev proxy to the API.",
+  "launchDate": "2026",
+  "liveUrl": "http://cvapp.thodeme.de/",
   "githubUrl": "",
   "screenshots": [
     {

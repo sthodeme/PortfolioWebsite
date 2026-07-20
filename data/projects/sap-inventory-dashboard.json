@@ -4,8 +4,8 @@
   "status": "mvp",
   "tagline": "Streamlit web app that consolidates 7 SAP export files and generates interactive inventory analysis dashboards.",
   "description": "A two-stage data processing and visualisation tool built with Streamlit. Stage 1 consolidates 7 different SAP CSV export files (Material Master, Vendor Master, Plant Master, Purchasing Info Records, Stock Movements, Purchase Orders, Stock Balance) into a single unified dataset. Stage 2 runs advanced inventory analysis — Top-N material and vendor rankings, cumulative monthly trend tracking, and tied-up capital calculations — and outputs interactive Plotly dashboards plus standalone HTML and Excel reports. Deployable locally or via Docker.",
-  "launchDate": "2024",
-  "liveUrl": "",
+  "launchDate": "Jan 2026",
+  "liveUrl": "https://sap.thodeme.de/",
   "githubUrl": "",
   "screenshots": [
     {
