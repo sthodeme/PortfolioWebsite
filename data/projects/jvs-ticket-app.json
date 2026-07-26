@@ -5,8 +5,8 @@
   "tagline": "Standalone issue/suggestion/enquiry ticket form for JVS Switchgears, with email routing and QR-code access.",
   "description": "A mobile-first ticket form built for JVS Switchgears, designed to be opened via QR code on the shop floor or by customers. Submissions (Issue / Suggestion / Enquiry) are emailed directly via SMTP to the company inbox, with an automatic copy sent back to the submitter. Each ticket gets a persistent YYYY-XXX number that survives redeploys. Supports multi-image upload from camera or gallery. No third-party form service is used — the entire backend is a self-hosted Node.js/Express app.",
   "launchDate": "July 2026",
-  "liveUrl": "",
-  "githubUrl": "https://github.com/sthodeme/Ticket-App",
+  "liveUrl": "https://jvsticket.thodeme.de/",
+  "githubUrl": "",
   "screenshots": [
     {
       "file": "assets/images/projects/jvs-ticket-app/image1.jpg",
