@@ -1,0 +1,40 @@
+{
+  "slug": "jvs-ticket-app",
+  "title": "JVS Ticket App",
+  "status": "production",
+  "tagline": "Standalone issue/suggestion/enquiry ticket form for JVS Switchgears, with email routing and QR-code access.",
+  "description": "A mobile-first ticket form built for JVS Switchgears, designed to be opened via QR code on the shop floor or by customers. Submissions (Issue / Suggestion / Enquiry) are emailed directly via SMTP to the company inbox, with an automatic copy sent back to the submitter. Each ticket gets a persistent YYYY-XXX number that survives redeploys. Supports multi-image upload from camera or gallery. No third-party form service is used — the entire backend is a self-hosted Node.js/Express app.",
+  "launchDate": "July 2026",
+  "liveUrl": "",
+  "githubUrl": "https://github.com/sthodeme/Ticket-App",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/jvs-ticket-app/image1.jpg",
+      "caption": "Ticket submission form"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-brand-nodejs", "label": "Node.js / Express" },
+    { "icon": "ti-mail", "label": "Nodemailer (SMTP email delivery)" },
+    { "icon": "ti-photo-up", "label": "Multer (multi-image upload)" },
+    { "icon": "ti-brand-docker", "label": "Docker" },
+    { "icon": "ti-server-2", "label": "Dokploy (self-hosted deployment)" }
+  ],
+  "highlights": [
+    "Standalone form — no Formspree or third-party form service",
+    "Persistent ticket numbering (YYYY-XXX), survives redeploys via mounted volume",
+    "Sends notification email to company inbox + auto-copy to submitter",
+    "Multi-image upload from camera or gallery (up to 10 files)",
+    "Mobile-first UI, designed for QR-code access",
+    "Fully containerized, deployed via Docker on Dokploy"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "SMTP credentials and .env configuration",
+      "Dokploy deployment configuration",
+      "Submitted ticket data"
+    ],
+    "label": "Deployment credentials and submitted ticket data available on request"
+  }
+}

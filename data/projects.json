@@ -52,5 +52,14 @@
     "tags": ["Python", "Streamlit", "Pandas", "Plotly", "Docker", "SAP"],
     "featured": true,
     "order": 6
+  },
+  {
+    "slug": "jvs-ticket-app",
+    "title": "JVS Ticket App",
+    "status": "production",
+    "tagline": "Standalone issue/suggestion/enquiry ticket form for JVS Switchgears, with email routing and QR-code access.",
+    "tags": ["Node.js", "Express", "Nodemailer", "Docker", "Dokploy"],
+    "featured": true,
+    "order": 7
   }
 ]
