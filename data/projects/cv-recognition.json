@@ -19,6 +19,9 @@
     {
       "file": "assets/images/projects/cv-recognition/image3.jpg",
       "caption": "Annotated detection results"
+    },{
+      "file": "assets/images/projects/cv-recognition/image4.jpg",
+      "caption": "Annotated detection results"
     }
   ],
   "stack": [
