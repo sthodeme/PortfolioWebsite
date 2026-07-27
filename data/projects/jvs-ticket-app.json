@@ -11,6 +11,10 @@
     {
       "file": "assets/images/projects/jvs-ticket-app/image1.jpg",
       "caption": "Ticket submission form"
+    },
+    {
+      "file": "assets/images/projects/jvs-ticket-app/image2.jpg",
+      "caption": "Form response"
     }
   ],
   "stack": [
