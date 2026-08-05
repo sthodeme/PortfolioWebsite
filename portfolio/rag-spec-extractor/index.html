@@ -248,9 +248,7 @@ const slug = (() => {
 
   // Actions
   const actions = [];
-  if (project.liveUrl) {
-    actions.push(`<a href="${project.liveUrl}" class="btn btn-primary" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Live project</a>`);
-  }
+  actions.push(`<span class="live-demo-note">Contact me for a live demo.</span>`);
   if (project.githubUrl) {
     actions.push(`<a href="${project.githubUrl}" class="btn btn-ghost" target="_blank" rel="noopener"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>`);
   }

@@ -229,6 +229,12 @@ h3 { font-size: 1.05rem; font-weight: 500; }
 .delay-4 { animation-delay: 0.32s; }
 .delay-5 { animation-delay: 0.40s; }
 
+.live-demo-note {
+  font-size: 13px;
+  color: var(--col-text-muted);
+  align-self: center;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .page-wrap { padding: 0 18px 60px; }
