@@ -1,0 +1,48 @@
+{
+  "slug": "hr-assistant",
+  "title": "HR Assistant Chatbot",
+  "status": "beta",
+  "tagline": "n8n + Claude-powered HR chatbot handling leave management, policy Q&A, certificates, and automatic Loss-of-Pay salary deduction — no HRMS required.",
+  "description": "An AI agent chatbot built for startups that need real HR admin automation without an HR platform. Employees log in with Employee ID + PIN and can check leave balances, apply for leave (Casual/Sick/Vacation/Loss-of-Pay) through a genuine manager-approval gate, ask free-text HR policy questions grounded in the company's actual policy document, and request an experience certificate generated on demand. Loss-of-Pay requests automatically calculate that month's salary deduction (monthly gross salary ÷ 21.7 per day) and log it for payroll — no separate attendance-tracking system required. Built entirely on n8n workflows, Google Sheets as the data backend, and Claude as the reasoning engine, with a custom-branded standalone chat interface for deployment outside n8n's own editor.",
+  "launchDate": "August 2026",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/hr-assistant/image1.jpg",
+      "caption": "HR assistant chatbot"
+    },
+    {
+      "file": "assets/images/projects/hr-assistant/image2.jpg",
+      "caption": "Options"
+    },
+    {
+      "file": "assets/images/projects/hr-assistant/image3.jpg",
+      "caption": "Leave Status"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-route", "label": "n8n (workflow orchestration)" },
+    { "icon": "ti-brain", "label": "Anthropic Claude (AI Agent reasoning)" },
+    { "icon": "ti-table", "label": "Google Sheets (data backend)" },
+    { "icon": "ti-file-text", "label": "Google Docs (policy doc + certificate templates)" },
+    { "icon": "ti-mail", "label": "Gmail (approval, notification, and certificate delivery)" }
+  ],
+  "highlights": [
+    "Real in-charge approval gate for leave requests — not a self-certification checkbox",
+    "Automatic Loss-of-Pay salary deduction (monthly gross ÷ 21.7/day), logged for payroll",
+    "Free-text HR policy Q&A grounded in the actual company policy document",
+    "On-demand experience certificate generation, emailed to HR for letterhead printing",
+    "No HRMS subscription — built entirely on n8n, Google Sheets, and Claude",
+    "Custom-branded standalone chat interface (via @n8n/chat), separate from n8n's own editor UI"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "n8n workflow exports (internal node configuration and credentials references)",
+      "Live Google Sheets data (employee records, PINs, and salary figures)",
+      "Google/Anthropic API credentials"
+    ],
+    "label": "Workflow exports, live data, and credentials available on request"
+  }
+}
