@@ -9,6 +9,10 @@
   "githubUrl": "",
   "screenshots": [
     {
+      "file": "assets/images/projects/hr-assistant/image0.jpg",
+      "caption": "n8n workflow editor"
+    },
+    {
       "file": "assets/images/projects/hr-assistant/image1.jpg",
       "caption": "HR assistant chatbot"
     },
