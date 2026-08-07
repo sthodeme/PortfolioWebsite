@@ -35,10 +35,13 @@
   "highlights": [
     "Real in-charge approval gate for leave requests — not a self-certification checkbox",
     "Automatic Loss-of-Pay salary deduction (monthly gross ÷ 21.7/day), logged for payroll",
+    "Autogeneerates salary slips and emails to employees",
+    "Autogenerates consolidated salary payment sheet and emails to HR for payment initiation",
     "Free-text HR policy Q&A grounded in the actual company policy document",
     "On-demand experience certificate generation, emailed to HR for letterhead printing",
     "No HRMS subscription — built entirely on n8n, Google Sheets, and Claude",
     "Custom-branded standalone chat interface (via @n8n/chat), separate from n8n's own editor UI"
+
   ],
   "restricted": {
     "enabled": true,
