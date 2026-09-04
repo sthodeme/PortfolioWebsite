@@ -62,5 +62,14 @@
     "tags": ["Node.js", "Express", "Nodemailer", "Docker", "Dokploy"],
     "featured": true,
     "order": 7
+  },
+  {
+    "slug": "cv-health-observer",
+    "title": "CV Health Observer",
+    "status": "development",
+    "tagline": "A privacy-preserving monitoring system designed to detect health emergencies and abnormal activity patterns in vulnerable individuals.",
+    "tags": ["LLM", "VML", "CV", "Edge AI"],
+    "featured": true,
+    "order": 8
   }
 ]

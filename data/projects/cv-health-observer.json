@@ -1,0 +1,32 @@
+{
+  "slug": "cv-health-observer",
+  "title": "CV Health Observer",
+  "status": "development",
+  "tagline": "A privacy-preserving monitoring system designed to detect health emergencies and abnormal activity patterns in vulnerable individuals.",
+  "description": "CV Health Observer is a privacy-preserving monitoring system designed to detect health emergencies and abnormal activity patterns in vulnerable individuals. Computer vision and vision-language models run on-device via Edge AI, so video never needs to leave the local environment. An LLM layer interprets detected patterns into actionable alerts for caregivers — without storing identifiable footage in the cloud.",
+  "launchDate": "2026",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [],
+  "stack": [
+    { "icon": "ti-brain", "label": "LLM" },
+    { "icon": "ti-language", "label": "VML" },
+    { "icon": "ti-eye", "label": "CV" },
+    { "icon": "ti-cpu", "label": "Edge AI" }
+  ],
+  "highlights": [
+    "On-device Edge AI inference — video stays local, no cloud streaming of identifiable footage",
+    "Computer vision pipeline for fall, inactivity, and abnormal motion pattern detection",
+    "Vision-language models (VML) to describe scenes without exposing raw video",
+    "LLM layer that turns detections into caregiver-ready alerts"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Model weights, training data, and evaluation datasets",
+      "Deployment architecture and on-device hardware configuration",
+      "Alert routing, caregiver workflows, and clinical validation details"
+    ],
+    "label": "Architecture, models, and deployment details are available on request"
+  }
+}
