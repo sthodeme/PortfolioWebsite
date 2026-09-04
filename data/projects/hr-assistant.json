@@ -26,7 +26,8 @@
     }
   ],
   "stack": [
-    { "icon": "ti-route", "label": "n8n (workflow orchestration)" },
+    { "icon": "ti-route", "label": "Flowise (Agentic RAG pipeline, with n8n tool integration)" },
+    "icon": "ti-route", "label": "n8n (workflow orchestration)" },
     { "icon": "ti-brain", "label": "Anthropic Claude (AI Agent reasoning)" },
     { "icon": "ti-table", "label": "Google Sheets (data backend)" },
     { "icon": "ti-file-text", "label": "Google Docs (policy doc + certificate templates)" },
