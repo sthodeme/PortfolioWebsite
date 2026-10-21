@@ -2,7 +2,7 @@
   {
     "slug": "hr-assistant",
     "title": "HR Assistant",
-    "status": "production",
+    "status": "development",
     "tagline": "Agentic AI-powered HR assistant for employees and managers.",
     "tags": ["AI", "n8n", "LLM", "Anthropic Claude", "Docker"],
     "featured": true,
