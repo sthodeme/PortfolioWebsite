@@ -9,19 +9,19 @@
   "githubUrl": "",
   "screenshots": [
     {
-      "file": "assets/images/projects/hr-assistant/image0.jpg",
+      "file": "assets/images/projects/hr-assistant/image01.jpg",
       "caption": "n8n workflow editor"
     },
     {
-      "file": "assets/images/projects/hr-assistant/image1.jpg",
+      "file": "assets/images/projects/hr-assistant/image11.jpg",
       "caption": "HR assistant chatbot"
     },
     {
-      "file": "assets/images/projects/hr-assistant/image2.jpg",
+      "file": "assets/images/projects/hr-assistant/image21.jpg",
       "caption": "Options"
     },
     {
-      "file": "assets/images/projects/hr-assistant/image3.jpg",
+      "file": "assets/images/projects/hr-assistant/image31.jpg",
       "caption": "Leave Status"
     }
   ],
