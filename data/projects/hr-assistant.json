@@ -3,8 +3,8 @@
   "title": "HR Assistant Chatbot",
   "status": "development",
   "tagline": "n8n + Claude-powered HR chatbot handling leave management, policy Q&A, certificates, and automatic Loss-of-Pay salary deduction — no HRMS required.",
-  "description": "An AI agent chatbot built for startups that need real HR admin automation without an HR platform. Employees log in with Employee ID + PIN and can check leave balances, apply for leave (Casual/Sick/Vacation/Loss-of-Pay) through a genuine manager-approval gate, ask free-text HR policy questions grounded in the company's actual policy document, and request an experience certificate generated on demand. Loss-of-Pay requests automatically calculate that month's salary deduction (monthly gross salary ÷ 21.7 per day) and log it for payroll — no separate attendance-tracking system required. Built entirely on n8n workflows, Google Sheets as the data backend, and Claude as the reasoning engine, with a custom-branded standalone chat interface for deployment outside n8n's own editor.",
-  "launchDate": "August 2026",
+  "description": "An AI agent Kollegio built for startups that need real HR admin automation without an HR platform. Employees can check leave balances, apply for leave through (CEO)-approval gate, ask free-text HR policy questions grounded in the company's actual policy document, and request an experience certificate generated on demand. Payroll inputs are collected and automatically passed on to tax consultant. No separate attendance-tracking system required. Built entirely on n8n workflows, Google Sheets as the data backend, and Claude as the reasoning engine, with a custom-branded standalone chat interface for deployment outside n8n's own editor. <br><br>Kollegio says HR sorted. Back to what matters most!"
+  "launchDate": "December 2026",
   "liveUrl": "",
   "githubUrl": "",
   "screenshots": [
