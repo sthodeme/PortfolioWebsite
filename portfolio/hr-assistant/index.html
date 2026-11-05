@@ -244,7 +244,7 @@ const slug = (() => {
   document.getElementById('project-badge').innerHTML = statusBadge(project.status);
   document.getElementById('project-title').textContent = project.title;
   document.getElementById('project-tagline').textContent = project.tagline;
-  document.getElementById('project-description').textContent = project.description;
+  document.getElementById('project-description').innerHTML = project.description;
 
   // Actions
   const actions = [];
