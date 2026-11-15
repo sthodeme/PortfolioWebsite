@@ -1,0 +1,57 @@
+{
+  "slug": "kollegio-mvp",
+  "title": "Kollegio: MVP plan",
+  "status": "planning",
+  "tagline": "An HR agent for small German start-ups: employees report leave, sickness and hours in a chat, the CEO approves, and the tax firm gets one clean monthly report.",
+  "description": "Kollegio takes routine HR admin off the desk of start-up CEOs who have 4–10 employees and no HR person. This project is the product work behind the MVP, run end to end as product manager and builder. Discovery came first: six interviews with four CEOs, an employee and a tax consultant showed that leave requests arrive by Teams, Slack and email, balances live in Excel, and the monthly handoff to the tax firm costs CEOs hours and causes errors. A competitor scan and a product strategy followed, then a roadmap and a PRD with 40 requirements and 12 user stories, published to Jira. The working prototype lets employees ask for leave in plain language. A Claude agent proposes the dates, skips weekends and public holidays, shows the balance before and after, and flags colleagues who are away. The CEO approves in one place, approves hourly staff's weeks with one click with a Minijob earnings-limit warning, and sends the monthly absence report. The prototype runs on my own server for in-person usability tests in November 2026; the MVP is planned for December, followed by a pilot with start-ups in January and February 2027.",
+  "launchDate": "December 2026",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/kollegio-mvp/image1.jpg",
+      "caption": "Start page: pick a persona (made-up demo data)"
+    },
+    {
+      "file": "assets/images/projects/kollegio-mvp/image2.jpg",
+      "caption": "Employee chat: the agent turns a request into a checkable card"
+    },
+    {
+      "file": "assets/images/projects/kollegio-mvp/image3.jpg",
+      "caption": "CEO: requests with balance and overlap check"
+    },
+    {
+      "file": "assets/images/projects/kollegio-mvp/image4.jpg",
+      "caption": "Hours approval with Minijob limit warning"
+    },
+    {
+      "file": "assets/images/projects/kollegio-mvp/image5.jpg",
+      "caption": "Monthly absence report for the tax firm"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-brand-nextjs", "label": "Next.js / React / TypeScript / Tailwind" },
+    { "icon": "ti-brain", "label": "Anthropic Claude (chat agent with tool use)" },
+    { "icon": "ti-brand-docker", "label": "Docker, GitHub Actions, Dokploy on a VPS in Germany" },
+    { "icon": "ti-brand-figma", "label": "FigJam user flows and Figma screens" },
+    { "icon": "ti-layout-kanban", "label": "Jira backlog and Confluence reports (via PM Studio)" }
+  ],
+  "highlights": [
+    "Discovery-led: six interviews and a competitor scan before any code",
+    "PRD with 40 requirements, acceptance criteria and 12 user stories in Jira",
+    "Plain-language leave requests with a confirmation card, so wrong dates are caught before saving",
+    "German rules built in: public holidays, part-time days, Minijob earnings limit",
+    "One monthly report to the tax firm, blocked until open items are fixed",
+    "Usability tests with six testers, with pass thresholds set before testing"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Interview notes and discovery synthesis",
+      "Product strategy, pricing and roadmap",
+      "Full PRD, usability test results and the live prototype",
+      "Source code (private repository)"
+    ],
+    "label": "Research, strategy, test results and a live prototype demo are available on request"
+  }
+}

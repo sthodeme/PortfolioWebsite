@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kollegio-mvp",
+    "title": "Kollegio: MVP plan",
+    "status": "planning",
+    "tagline": "An HR agent for small German start-ups: employees report leave, sickness and hours in a chat, the CEO approves, and the tax firm gets one clean monthly report.",
+    "tags": [
+      "Product Management",
+      "AI agent",
+      "Anthropic Claude",
+      "Next.js",
+      "Docker",
+      "Figma"
+    ],
+    "featured": true,
+    "order": 1
+  },
+  {
     "slug": "pm-studio",
     "title": "PM Studio",
     "status": "mvp",
@@ -13,7 +29,7 @@
       "Jira"
     ],
     "featured": true,
-    "order": 1
+    "order": 2
   },
   {
     "slug": "hr-assistant",
@@ -22,7 +38,7 @@
     "tagline": "Agentic AI-powered HR assistant for employees and managers.",
     "tags": ["AI", "n8n", "LLM", "Anthropic Claude", "Docker"],
     "featured": true,
-    "order": 2
+    "order": 3
   },
   {
     "slug": "kmu-assistant-flowise",
@@ -31,7 +47,7 @@
     "tagline": "KMU Legal Assistant rebuilt using Flowise — a no-code RAG pipeline with Qdrant, OpenAI and Claude.",
     "tags": ["Flowise", "RAG", "Qdrant", "OpenAI", "Anthropic Claude", "Docker"],
     "featured": true,
-    "order": 3
+    "order": 4
   },
   {
     "slug": "network-file-finder",
@@ -40,7 +56,7 @@
     "tagline": "A Network File Finder built using no-code with n8n, Ollama and Claude.",
     "tags": ["n8n", "Ollama", "Anthropic Claude"],
     "featured": true,
-    "order": 4
+    "order": 5
   },
   {
     "slug": "rag-spec-extractor",
@@ -49,7 +65,7 @@
     "tagline": "A RAG Spec Extractor built using no-code with n8n, Ollama and Claude.",
     "tags": ["n8n", "Ollama", "Anthropic Claude"],
     "featured": true,
-    "order": 5
+    "order": 6
   },
   {
     "slug": "cv-recognition",
@@ -58,7 +74,7 @@
     "tagline": "Intelligent CV parsing and candidate recognition powered by computer vision and NLP.",
     "tags": ["Computer Vision", "NLP", "Python", "ML"],
     "featured": true,
-    "order": 6
+    "order": 7
   },
   {
     "slug": "sap-inventory-dashboard",
@@ -67,7 +83,7 @@
     "tagline": "Streamlit web app that consolidates 7 SAP export files and generates interactive inventory analysis dashboards.",
     "tags": ["Python", "Streamlit", "Pandas", "Plotly", "Docker", "SAP"],
     "featured": true,
-    "order": 7
+    "order": 8
   },
   {
     "slug": "jvs-ticket-app",
@@ -76,7 +92,7 @@
     "tagline": "Standalone issue/suggestion/enquiry ticket form for JVS Switchgears, with email routing and QR-code access.",
     "tags": ["Node.js", "Express", "Nodemailer", "Docker", "Dokploy"],
     "featured": true,
-    "order": 8
+    "order": 9
   },
   {
     "slug": "cv-health-observer",
@@ -85,6 +101,6 @@
     "tagline": "A privacy-preserving monitoring system designed to detect health emergencies and abnormal activity patterns in vulnerable individuals.",
     "tags": ["LLM", "VML", "CV", "Edge AI"],
     "featured": true,
-    "order": 9
+    "order": 10
   }
 ]
