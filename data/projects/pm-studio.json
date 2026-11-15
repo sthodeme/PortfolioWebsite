@@ -1,0 +1,52 @@
+{
+  "slug": "pm-studio",
+  "title": "PM Studio",
+  "status": "mvp",
+  "tagline": "A local workspace that walks a product from discovery to launch, with Claude doing the drafting and critiquing at every stage.",
+  "description": "PM Studio is a browser front end for PM Tools, my set of 12 Claude skills for product management (strategy, PRD, prioritization, roadmap, prototype, launch, metrics and more). It lays out the product lifecycle as stages, from Discover to Learn, each with an entry gate and a done-when check, and it reads progress from a stage tracker in plain Markdown files. Buttons run Claude Code in the product folder: draft a document, score it against a rubric, run a panel of six reviewer personas, or apply the top fixes. Every output is a Markdown file, so the same work can continue in Claude Code at any time. When a stage is ready, PM Studio writes short stakeholder pages and publishes them to Confluence, and turns the PRD's user stories into Jira stories without touching tickets the team has already started. I use it to run my own HR-assistant product from research to usability testing.",
+  "launchDate": "2026",
+  "liveUrl": "",
+  "githubUrl": "",
+  "screenshots": [
+    {
+      "file": "assets/images/projects/pm-studio/image1.jpg",
+      "caption": "Stage sidebar and product overview"
+    },
+    {
+      "file": "assets/images/projects/pm-studio/image2.jpg",
+      "caption": "Stage page with Claude actions and document editor"
+    },
+    {
+      "file": "assets/images/projects/pm-studio/image3.jpg",
+      "caption": "Live prioritization board (RICE, value vs effort)"
+    },
+    {
+      "file": "assets/images/projects/pm-studio/image4.jpg",
+      "caption": "Activity panel: chat with Claude about the workspace"
+    }
+  ],
+  "stack": [
+    { "icon": "ti-brand-nodejs", "label": "Node.js server, no framework" },
+    { "icon": "ti-brand-javascript", "label": "Vanilla JavaScript UI" },
+    { "icon": "ti-sparkles", "label": "Claude Code / Claude skills & sub-agents" },
+    { "icon": "ti-markdown", "label": "Markdown files as the data store" },
+    { "icon": "ti-api", "label": "Confluence & Jira Cloud REST APIs" }
+  ],
+  "highlights": [
+    "Stage-gated lifecycle: each stage shows what it needs first, when it's done, and the next step",
+    "One-click draft, critique, review panel and iterate runs, with progress and follow-up questions in an activity panel",
+    "Prioritization board with RICE, ICE, WSJF, value vs effort, MoSCoW and Kano; saves a scoring table and chart",
+    "Publishes stakeholder pages to Confluence and user stories to Jira, respecting sprints, in-progress work and Done stories",
+    "Runs only on localhost, with two dependencies; API tokens stay outside the repo"
+  ],
+  "restricted": {
+    "enabled": true,
+    "items": [
+      "Source code, skill templates and critique rubrics (private repository)",
+      "Real product workspaces: interview notes, research and strategy documents",
+      "Confluence and Jira workspaces used with real products",
+      "A live walkthrough on a real product"
+    ],
+    "label": "The code, the skill library and a live walkthrough are available on request"
+  }
+}
